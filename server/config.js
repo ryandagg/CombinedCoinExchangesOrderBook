@@ -1,10 +1,11 @@
 const port = process.env.PORT || 8000;
-const baseUrl = process.env.BASE_URL;
 const socketPort = process.env.SOCKET_PORT || 3000;
 const localHost = 'http://localhost';
+const isDevMode = process.env.NODE_ENV === 'development' || false;
+const baseUrl = isDevMode ? localHost : 'https://combinedcoinexchanges.herokuapp.com';
 
-console.log('process.env.NODE_ENV: ', process.env.NODE_ENV)
-console.log('process.env.baseUrl: ', process.env.baseUrl)
+console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
+console.log('process.env.BASE_URL: ', process.env.BASE_URL);
 
 export default {
     port,
