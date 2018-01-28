@@ -63,20 +63,25 @@
 /***/ function(module, exports) {
 
 	"use strict";
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 	var port = process.env.PORT || 8000;
-	var baseUrl = process.env.BASE_URL;
 	var socketPort = process.env.SOCKET_PORT || 3000;
+	var localHost = 'http://localhost';
+	var isDevMode = process.env.NODE_ENV === 'development';
+	var baseUrl = isDevMode ? '' : 'https://combinedcoinexchanges.herokuapp.com';
+	
+	console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
+	console.log('process.env.BASE_URL: ', process.env.BASE_URL);
 	
 	exports.default = {
 	    port: port,
-	    socketPort: process.env.SOCKET_PORT || 3000,
-	    baseUrl: baseUrl || "http://localhost:" + port,
-	    socketUrl: baseUrl ? baseUrl + ":" + socketPort : "http://localhost:" + socketPort
+	    socketPort: socketPort,
+	    baseUrl: baseUrl || localHost + ':' + port,
+	    socketUrl: (baseUrl || localHost) + ':' + socketPort
 	};
 
 /***/ },
