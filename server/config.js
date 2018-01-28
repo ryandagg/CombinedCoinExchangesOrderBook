@@ -11,6 +11,6 @@ export default {
     port,
     socketPort,
     baseUrl: baseUrl || `${localHost}:${port}`,
-    socketUrl: `${baseUrl || localHost}:${socketPort}`,
+    socketUrl: `${baseUrl || localHost}:${port}`,
 };
 

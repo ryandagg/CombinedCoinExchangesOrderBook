@@ -81,7 +81,7 @@
 	    port: port,
 	    socketPort: socketPort,
 	    baseUrl: baseUrl || localHost + ':' + port,
-	    socketUrl: (baseUrl || localHost) + ':' + socketPort
+	    socketUrl: (baseUrl || localHost) + ':' + port
 	};
 
 /***/ },
@@ -1334,7 +1334,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var server = _socket2.default.listen(_config2.default.socketPort);
+	var server = _socket2.default.listen(_config2.default.port);
 	
 	// todo: use namespaces and subscriptions properly instead of this hack
 	var sequenceNumberByClient = new Map();
