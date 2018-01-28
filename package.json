@@ -8,9 +8,9 @@
         "cover": "nyc npm run test",
         "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
         "start:dev": "cross-env BABEL_DISABLE_CACHE=1 NODE_ENV=development nodemon index.js",
-        "start": "npm run clean && npm run build && npm run build:server && npm run start:prod",
+        "start": "npm run start:prod",
         "start:prod": "cross-env NODE_ENV=production node index.js",
-        "build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+        "build": "npm run clean && npm run build:server && cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
         "build:server": "cross-env NODE_ENV=production webpack --config webpack.config.server.js",
         "clean": "rm -rf dist",
         "slate": "rm -rf node_modules && npm install",
@@ -133,7 +133,8 @@
         "webpack-manifest-plugin": "^1.0.1"
     },
     "engines": {
-        "node": "9.3.0"
+        "node": "9.3.0",
+        "npm": "5.6.0"
     },
     "ava": {
         "files": [
