@@ -3,16 +3,7 @@ import React, { PropTypes } from 'react';
 import io from 'socket.io-client';
 import {mergeNewOrders, buildOrdersMap, mergeExchanges} from '../../../../server/util/OrderUtils';
 
-function OrderTables({asksBody, bidsBody, asksSum, bidsSum}) {
-    return (
-        <div className="row">
-            <OrderTable className="col-6" orders={asksBody} sum={asksSum} title="asks"/>
-            <OrderTable className="col-6" orders={bidsBody} sum={bidsSum} title="bids"/>
-        </div>
-    );
-}
-
-const OrderTable = ({orders, title, className, sum}) => {
+const OrderTable = ({ordersBody, title, className, sum}) => {
     return (
         <div className={className}>
             <h2 style={{float: 'left'}}>{title}</h2>
@@ -27,12 +18,21 @@ const OrderTable = ({orders, title, className, sum}) => {
                 </tr>
                 </thead>
                 <tbody>
-                    {orders}
+                    {ordersBody}
                 </tbody>
             </table>
         </div>
     );
 };
+
+function OrderTables({asksBody, bidsBody, asksSum, bidsSum}) {
+    return (
+        <div className="row">
+            <OrderTable className="col-6" ordersBody={asksBody} sum={asksSum} title="Asks"/>
+            <OrderTable className="col-6" ordersBody={bidsBody} sum={bidsSum} title="Bids"/>
+        </div>
+    );
+}
 
 OrderTables.propTypes = {
     // posts: PropTypes.arrayOf(PropTypes.shape({
@@ -72,7 +72,6 @@ export default compose(
             asksSum: asks[asks.length - 1].sum.toString().slice(0, 8),
             bidsBody: bids.slice(0, 50).map(buildRow),
             bidsSum: bids[bids.length - 1].sum.toString().slice(0, 8),
-
         };
     }),
     lifecycle({
