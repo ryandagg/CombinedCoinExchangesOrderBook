@@ -156,3 +156,5 @@ app.listen(serverConfig.port, (error) => {
 initSockets();
 
 export default app;
+
+console.log('change dist')
