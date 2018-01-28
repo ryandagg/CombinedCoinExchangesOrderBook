@@ -37,7 +37,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 45);
+/******/ 	return __webpack_require__(__webpack_require__.s = 41);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -101,7 +101,7 @@
 	});
 	exports.getCombinedOrderBookRequest = exports.setOrders = exports.SET_ORDERS = undefined;
 	
-	var _apiCaller = __webpack_require__(18);
+	var _apiCaller = __webpack_require__(17);
 	
 	var _apiCaller2 = _interopRequireDefault(_apiCaller);
 	
@@ -357,13 +357,12 @@
 /***/ function(module, exports) {
 
 	"use strict";
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
 	var config = {
-	    mongoURL: process.env.MONGO_URL || 'mongodb://localhost:27017/mern-starter',
 	    port: process.env.PORT || 8000
 	};
 	
@@ -377,12 +376,6 @@
 
 /***/ },
 /* 10 */
-/***/ function(module, exports) {
-
-	module.exports = require("mongoose");
-
-/***/ },
-/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -395,31 +388,31 @@
 	
 	var _reactIntl = __webpack_require__(2);
 	
-	var _intl = __webpack_require__(49);
+	var _intl = __webpack_require__(44);
 	
 	var _intl2 = _interopRequireDefault(_intl);
 	
-	var _intlLocalesSupported = __webpack_require__(50);
+	var _intlLocalesSupported = __webpack_require__(45);
 	
 	var _intlLocalesSupported2 = _interopRequireDefault(_intlLocalesSupported);
 	
-	__webpack_require__(51);
+	__webpack_require__(46);
 	
-	var _en = __webpack_require__(57);
+	var _en = __webpack_require__(51);
 	
 	var _en2 = _interopRequireDefault(_en);
 	
-	var _en3 = __webpack_require__(34);
+	var _en3 = __webpack_require__(31);
 	
 	var _en4 = _interopRequireDefault(_en3);
 	
-	__webpack_require__(52);
+	__webpack_require__(47);
 	
-	var _fr = __webpack_require__(58);
+	var _fr = __webpack_require__(52);
 	
 	var _fr2 = _interopRequireDefault(_fr);
 	
-	var _fr3 = __webpack_require__(35);
+	var _fr3 = __webpack_require__(32);
 	
 	var _fr4 = _interopRequireDefault(_fr3);
 	
@@ -485,7 +478,7 @@
 	localizationData.fr.messages = flattenMessages(localizationData.fr.messages);
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -506,7 +499,7 @@
 	}
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -522,13 +515,13 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reduxDevtools = __webpack_require__(60);
+	var _reduxDevtools = __webpack_require__(54);
 	
-	var _reduxDevtoolsLogMonitor = __webpack_require__(62);
+	var _reduxDevtoolsLogMonitor = __webpack_require__(56);
 	
 	var _reduxDevtoolsLogMonitor2 = _interopRequireDefault(_reduxDevtoolsLogMonitor);
 	
-	var _reduxDevtoolsDockMonitor = __webpack_require__(61);
+	var _reduxDevtoolsDockMonitor = __webpack_require__(55);
 	
 	var _reduxDevtoolsDockMonitor2 = _interopRequireDefault(_reduxDevtoolsDockMonitor);
 	
@@ -540,7 +533,7 @@
 	}, void 0, _jsx(_reduxDevtoolsLogMonitor2.default, {})));
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -555,7 +548,7 @@
 	
 	exports.switchLanguage = switchLanguage;
 	
-	var _setup = __webpack_require__(11);
+	var _setup = __webpack_require__(10);
 	
 	// Export Constants
 	var SWITCH_LANGUAGE = exports.SWITCH_LANGUAGE = 'SWITCH_LANGUAGE';
@@ -567,7 +560,7 @@
 	}
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -600,7 +593,7 @@
 	exports.default = PostReducer;
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -649,7 +642,7 @@
 	
 	var _PostActions = __webpack_require__(6);
 	
-	var _PostReducer = __webpack_require__(15);
+	var _PostReducer = __webpack_require__(14);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -686,7 +679,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(PostDetailPage);
 
 /***/ },
-/* 17 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -706,7 +699,7 @@
 	
 	var _reactRedux = __webpack_require__(1);
 	
-	var _OrderTables = __webpack_require__(41);
+	var _OrderTables = __webpack_require__(38);
 	
 	var _OrderTables2 = _interopRequireDefault(_OrderTables);
 	
@@ -763,7 +756,7 @@
 	}
 	
 	// PostListPage.propTypes = {
-	//     posts: PropTypes.arrayOf(PropTypes.shape({
+	//     orders: PropTypes.arrayOf(PropTypes.shape({
 	//         name: PropTypes.string.isRequired,
 	//         title: PropTypes.string.isRequired,
 	//         content: PropTypes.string.isRequired,
@@ -779,7 +772,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(PostListPage);
 
 /***/ },
-/* 18 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -791,7 +784,7 @@
 	exports.API_URL = undefined;
 	exports.default = callApi;
 	
-	var _isomorphicFetch = __webpack_require__(53);
+	var _isomorphicFetch = __webpack_require__(48);
 	
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 	
@@ -836,37 +829,7 @@
 	}
 
 /***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _mongoose = __webpack_require__(10);
-	
-	var _mongoose2 = _interopRequireDefault(_mongoose);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Schema = _mongoose2.default.Schema;
-	
-	var postSchema = new Schema({
-	    name: { type: 'String', required: true },
-	    title: { type: 'String', required: true },
-	    content: { type: 'String', required: true },
-	    slug: { type: 'String', required: true },
-	    cuid: { type: 'String', required: true },
-	    dateAdded: { type: 'Date', default: Date.now, required: true }
-	});
-	
-	exports.default = _mongoose2.default.model('Post', postSchema);
-
-/***/ },
-/* 20 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -879,13 +842,13 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _nodeBittrexApi = __webpack_require__(55);
+	var _nodeBittrexApi = __webpack_require__(49);
 	
 	var _nodeBittrexApi2 = _interopRequireDefault(_nodeBittrexApi);
 	
 	var _ServicesConstants = __webpack_require__(3);
 	
-	var _apiCaller = __webpack_require__(18);
+	var _apiCaller = __webpack_require__(17);
 	
 	var _apiCaller2 = _interopRequireDefault(_apiCaller);
 	
@@ -1008,7 +971,7 @@
 	};
 
 /***/ },
-/* 21 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1031,7 +994,7 @@
 	
 	var init = function init() {
 	    return new Promise(function (resolve) {
-	        var Poloniex = __webpack_require__(56);
+	        var Poloniex = __webpack_require__(50);
 	
 	        var poloniex = new Poloniex();
 	
@@ -1135,13 +1098,13 @@
 	exports.transformPlxUpdate = transformPlxUpdate;
 
 /***/ },
-/* 22 */
+/* 20 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux");
 
 /***/ },
-/* 23 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1180,7 +1143,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(IntlWrapper);
 
 /***/ },
-/* 24 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1199,7 +1162,7 @@
 	
 	var _reactRouter = __webpack_require__(5);
 	
-	var _App = __webpack_require__(36);
+	var _App = __webpack_require__(33);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -1218,8 +1181,8 @@
 	 */
 	if (process.env.NODE_ENV !== 'production') {
 	    // Require async routes only in development for react-hot-reloader to work.
-	    __webpack_require__(17);
 	    __webpack_require__(16);
+	    __webpack_require__(15);
 	}
 	
 	// react-router setup with code-splitting
@@ -1230,20 +1193,20 @@
 	}, void 0, _jsx(_reactRouter.IndexRoute, {
 	    getComponent: function getComponent(nextState, cb) {
 	        Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
-	            cb(null, __webpack_require__(17).default);
+	            cb(null, __webpack_require__(16).default);
 	        }).bind(null, __webpack_require__));
 	    }
 	}), _jsx(_reactRouter.Route, {
 	    path: '/posts/:slug-:cuid',
 	    getComponent: function getComponent(nextState, cb) {
 	        Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
-	            cb(null, __webpack_require__(16).default);
+	            cb(null, __webpack_require__(15).default);
 	        }).bind(null, __webpack_require__));
 	    }
 	}));
 
 /***/ },
-/* 25 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1254,17 +1217,17 @@
 	});
 	exports.configureStore = configureStore;
 	
-	var _redux = __webpack_require__(22);
+	var _redux = __webpack_require__(20);
 	
-	var _reduxThunk = __webpack_require__(63);
+	var _reduxThunk = __webpack_require__(57);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _DevTools = __webpack_require__(13);
+	var _DevTools = __webpack_require__(12);
 	
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 	
-	var _reducers = __webpack_require__(42);
+	var _reducers = __webpack_require__(39);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -1300,45 +1263,7 @@
 	}
 
 /***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	exports.default = function () {
-	    _post2.default.count().exec(function (err, count) {
-	        if (count > 0) {
-	            return;
-	        }
-	
-	        var content1 = 'Sed ut perspiciatis unde omnis iste natus error\n      sit voluptatem accusantium doloremque laudantium, totam rem aperiam,\n      eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae\n      vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit\n      aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos\n      qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem\n      ipsum quia dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\n      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\n      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\n      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint\n      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id\n      est laborum';
-	
-	        var content2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut\n      enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\n      ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit\n      in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint\n      occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id\n      est laborum. Sed ut perspiciatis unde omnis iste natus error\n      sit voluptatem accusantium doloremque laudantium, totam rem aperiam,\n      eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae\n      vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit\n      aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos\n      qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem\n      ipsum quia dolor sit amet.';
-	
-	        var post1 = new _post2.default({ name: 'Admin', title: 'Hello MERN', slug: 'hello-mern', cuid: 'cikqgkv4q01ck7453ualdn3hd', content: content1 });
-	        var post2 = new _post2.default({ name: 'Admin', title: 'Lorem Ipsum', slug: 'lorem-ipsum', cuid: 'cikqgkv4q01ck7453ualdn3hf', content: content2 });
-	
-	        _post2.default.create([post1, post2], function (error) {
-	            if (!error) {
-	                // console.log('ready to go....');
-	            }
-	        });
-	    });
-	};
-	
-	var _post = __webpack_require__(19);
-	
-	var _post2 = _interopRequireDefault(_post);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ },
-/* 27 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1350,27 +1275,9 @@
 	
 	var _express = __webpack_require__(9);
 	
-	var _post = __webpack_require__(44);
-	
-	var PostController = _interopRequireWildcard(_post);
-	
-	var _orders = __webpack_require__(43);
-	
-	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	var _orders = __webpack_require__(40);
 	
 	var router = new _express.Router();
-	
-	// Get all Posts
-	router.route('/posts').get(PostController.getPosts);
-	
-	// Get one post by cuid
-	router.route('/posts/:cuid').get(PostController.getPost);
-	
-	// Add a new Post
-	router.route('/posts').post(PostController.addPost);
-	
-	// Delete a post by cuid
-	router.route('/posts/:cuid').delete(PostController.deletePost);
 	
 	// Get all Orders
 	router.route('/orders').get(_orders.getCombinedOrderBookRequest);
@@ -1378,7 +1285,7 @@
 	exports.default = router;
 
 /***/ },
-/* 28 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1391,15 +1298,15 @@
 	
 	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 	
-	var _socket = __webpack_require__(65);
+	var _socket = __webpack_require__(58);
 	
 	var _socket2 = _interopRequireDefault(_socket);
 	
-	var _PoloniexServices = __webpack_require__(21);
+	var _PoloniexServices = __webpack_require__(19);
 	
 	var _PoloniexServices2 = _interopRequireDefault(_PoloniexServices);
 	
-	var _BittrexServices = __webpack_require__(20);
+	var _BittrexServices = __webpack_require__(18);
 	
 	var _BittrexServices2 = _interopRequireDefault(_BittrexServices);
 	
@@ -1478,7 +1385,7 @@
 	};
 
 /***/ },
-/* 29 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1489,7 +1396,7 @@
 	});
 	exports.fetchComponentData = fetchComponentData;
 	
-	var _promiseUtils = __webpack_require__(47);
+	var _promiseUtils = __webpack_require__(43);
 	
 	function fetchComponentData(store, components, params) {
 	    var needs = components.reduce(function (prev, current) {
@@ -1505,31 +1412,31 @@
 	  */
 
 /***/ },
-/* 30 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = require("body-parser");
 
 /***/ },
-/* 31 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = require("compression");
 
 /***/ },
-/* 32 */
+/* 29 */
 /***/ function(module, exports) {
 
 	module.exports = require("path");
 
 /***/ },
-/* 33 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom/server");
 
 /***/ },
-/* 34 */
+/* 31 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1546,7 +1453,7 @@
 	};
 
 /***/ },
-/* 35 */
+/* 32 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1576,7 +1483,7 @@
 	};
 
 /***/ },
-/* 36 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1607,21 +1514,21 @@
 	
 	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 	
-	var _DevTools = __webpack_require__(13);
+	var _DevTools = __webpack_require__(12);
 	
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 	
-	var _Header = __webpack_require__(39);
+	var _Header = __webpack_require__(36);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _Footer = __webpack_require__(38);
+	var _Footer = __webpack_require__(35);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
-	var _AppActions = __webpack_require__(12);
+	var _AppActions = __webpack_require__(11);
 	
-	var _IntlActions = __webpack_require__(14);
+	var _IntlActions = __webpack_require__(13);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1697,7 +1604,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
 
 /***/ },
-/* 37 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1708,7 +1615,7 @@
 	});
 	exports.getShowAddPost = undefined;
 	
-	var _AppActions = __webpack_require__(12);
+	var _AppActions = __webpack_require__(11);
 	
 	// Initial State
 	var initialState = {
@@ -1742,7 +1649,7 @@
 	exports.default = AppReducer;
 
 /***/ },
-/* 38 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1799,7 +1706,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 39 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1853,7 +1760,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 40 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1865,9 +1772,9 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _setup = __webpack_require__(11);
+	var _setup = __webpack_require__(10);
 	
-	var _IntlActions = __webpack_require__(14);
+	var _IntlActions = __webpack_require__(13);
 	
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
@@ -1900,7 +1807,7 @@
 	exports.default = IntlReducer;
 
 /***/ },
-/* 41 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1912,13 +1819,13 @@
 	
 	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
 	
-	var _recompose = __webpack_require__(59);
+	var _recompose = __webpack_require__(53);
 	
 	var _react = __webpack_require__(0);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _socket = __webpack_require__(66);
+	var _socket = __webpack_require__(59);
 	
 	var _socket2 = _interopRequireDefault(_socket);
 	
@@ -2029,7 +1936,7 @@
 	}))(OrderTables);
 
 /***/ },
-/* 42 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2039,17 +1946,17 @@
 	    value: true
 	});
 	
-	var _redux = __webpack_require__(22);
+	var _redux = __webpack_require__(20);
 	
-	var _AppReducer = __webpack_require__(37);
+	var _AppReducer = __webpack_require__(34);
 	
 	var _AppReducer2 = _interopRequireDefault(_AppReducer);
 	
-	var _PostReducer = __webpack_require__(15);
+	var _PostReducer = __webpack_require__(14);
 	
 	var _PostReducer2 = _interopRequireDefault(_PostReducer);
 	
-	var _IntlReducer = __webpack_require__(40);
+	var _IntlReducer = __webpack_require__(37);
 	
 	var _IntlReducer2 = _interopRequireDefault(_IntlReducer);
 	
@@ -2068,7 +1975,7 @@
 	// Import Reducers
 
 /***/ },
-/* 43 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2079,7 +1986,7 @@
 	});
 	exports.getCombinedOrderBookRequest = getCombinedOrderBookRequest;
 	
-	var _CombinedExchangeServices = __webpack_require__(46);
+	var _CombinedExchangeServices = __webpack_require__(42);
 	
 	function getCombinedOrderBookRequest(req, res) {
 	    (0, _CombinedExchangeServices.getCombinedOrderBook)().then(function (orders) {
@@ -2090,116 +1997,7 @@
 	}
 
 /***/ },
-/* 44 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.getPosts = getPosts;
-	exports.addPost = addPost;
-	exports.getPost = getPost;
-	exports.deletePost = deletePost;
-	
-	var _post = __webpack_require__(19);
-	
-	var _post2 = _interopRequireDefault(_post);
-	
-	var _cuid = __webpack_require__(48);
-	
-	var _cuid2 = _interopRequireDefault(_cuid);
-	
-	var _limax = __webpack_require__(54);
-	
-	var _limax2 = _interopRequireDefault(_limax);
-	
-	var _sanitizeHtml = __webpack_require__(64);
-	
-	var _sanitizeHtml2 = _interopRequireDefault(_sanitizeHtml);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	/**
-	 * Get all posts
-	 * @param req
-	 * @param res
-	 * @returns void
-	 */
-	function getPosts(req, res) {
-	    _post2.default.find().sort('-dateAdded').exec(function (err, posts) {
-	        if (err) {
-	            res.status(500).send(err);
-	        }
-	        res.json({ posts: posts });
-	    });
-	}
-	
-	/**
-	 * Save a post
-	 * @param req
-	 * @param res
-	 * @returns void
-	 */
-	function addPost(req, res) {
-	    if (!req.body.post.name || !req.body.post.title || !req.body.post.content) {
-	        res.status(403).end();
-	    }
-	
-	    var newPost = new _post2.default(req.body.post);
-	
-	    // Let's sanitize inputs
-	    newPost.title = (0, _sanitizeHtml2.default)(newPost.title);
-	    newPost.name = (0, _sanitizeHtml2.default)(newPost.name);
-	    newPost.content = (0, _sanitizeHtml2.default)(newPost.content);
-	
-	    newPost.slug = (0, _limax2.default)(newPost.title.toLowerCase(), { lowercase: true });
-	    newPost.cuid = (0, _cuid2.default)();
-	    newPost.save(function (err, saved) {
-	        if (err) {
-	            res.status(500).send(err);
-	        }
-	        res.json({ post: saved });
-	    });
-	}
-	
-	/**
-	 * Get a single post
-	 * @param req
-	 * @param res
-	 * @returns void
-	 */
-	function getPost(req, res) {
-	    _post2.default.findOne({ cuid: req.params.cuid }).exec(function (err, post) {
-	        if (err) {
-	            res.status(500).send(err);
-	        }
-	        res.json({ post: post });
-	    });
-	}
-	
-	/**
-	 * Delete a post
-	 * @param req
-	 * @param res
-	 * @returns void
-	 */
-	function deletePost(req, res) {
-	    _post2.default.findOne({ cuid: req.params.cuid }).exec(function (err, post) {
-	        if (err) {
-	            res.status(500).send(err);
-	        }
-	
-	        post.remove(function () {
-	            res.status(200).end();
-	        });
-	    });
-	}
-
-/***/ },
-/* 45 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2215,29 +2013,25 @@
 	
 	var _express2 = _interopRequireDefault(_express);
 	
-	var _compression = __webpack_require__(31);
+	var _compression = __webpack_require__(28);
 	
 	var _compression2 = _interopRequireDefault(_compression);
 	
-	var _mongoose = __webpack_require__(10);
-	
-	var _mongoose2 = _interopRequireDefault(_mongoose);
-	
-	var _bodyParser = __webpack_require__(30);
+	var _bodyParser = __webpack_require__(27);
 	
 	var _bodyParser2 = _interopRequireDefault(_bodyParser);
 	
-	var _path = __webpack_require__(32);
+	var _path = __webpack_require__(29);
 	
 	var _path2 = _interopRequireDefault(_path);
 	
-	var _IntlWrapper = __webpack_require__(23);
+	var _IntlWrapper = __webpack_require__(21);
 	
 	var _IntlWrapper2 = _interopRequireDefault(_IntlWrapper);
 	
-	var _SocketService = __webpack_require__(28);
+	var _SocketService = __webpack_require__(25);
 	
-	var _store = __webpack_require__(25);
+	var _store = __webpack_require__(23);
 	
 	var _reactRedux = __webpack_require__(1);
 	
@@ -2245,7 +2039,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _server = __webpack_require__(33);
+	var _server = __webpack_require__(30);
 	
 	var _reactRouter = __webpack_require__(5);
 	
@@ -2253,19 +2047,15 @@
 	
 	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 	
-	var _routes = __webpack_require__(24);
+	var _routes = __webpack_require__(22);
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _fetchData = __webpack_require__(29);
+	var _fetchData = __webpack_require__(26);
 	
-	var _post = __webpack_require__(27);
+	var _order = __webpack_require__(24);
 	
-	var _post2 = _interopRequireDefault(_post);
-	
-	var _dummyData = __webpack_require__(26);
-	
-	var _dummyData2 = _interopRequireDefault(_dummyData);
+	var _order2 = _interopRequireDefault(_order);
 	
 	var _config = __webpack_require__(8);
 	
@@ -2299,26 +2089,12 @@
 	// Import required modules
 	
 	
-	// Set native promises as mongoose promise
-	_mongoose2.default.Promise = global.Promise;
-	
-	// MongoDB Connection
-	_mongoose2.default.connect(_config2.default.mongoURL, function (error) {
-	    if (error) {
-	        console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
-	        throw error;
-	    }
-	
-	    // feed some dummy data in DB.
-	    (0, _dummyData2.default)();
-	});
-	
 	// Apply body Parser and server public assets and routes
 	app.use((0, _compression2.default)());
 	app.use(_bodyParser2.default.json({ limit: '20mb' }));
 	app.use(_bodyParser2.default.urlencoded({ limit: '20mb', extended: false }));
 	app.use(_express2.default.static(_path2.default.resolve(__dirname, '../dist/client')));
-	app.use('/api', _post2.default);
+	app.use('/api', _order2.default);
 	
 	// Render Initial HTML
 	var renderFullPage = function renderFullPage(html, initialState) {
@@ -2380,7 +2156,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "server"))
 
 /***/ },
-/* 46 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2391,9 +2167,9 @@
 	});
 	exports.getCombinedOrderBook = getCombinedOrderBook;
 	
-	var _PoloniexServices = __webpack_require__(21);
+	var _PoloniexServices = __webpack_require__(19);
 	
-	var _BittrexServices = __webpack_require__(20);
+	var _BittrexServices = __webpack_require__(18);
 	
 	function getCombinedOrderBook() {
 	    return Promise.all([(0, _PoloniexServices.getPoloniexOrderBook)(), (0, _BittrexServices.getBittrexOrderBook)()])
@@ -2408,7 +2184,7 @@
 	}
 
 /***/ },
-/* 47 */
+/* 43 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2439,115 +2215,97 @@
 	}
 
 /***/ },
-/* 48 */
-/***/ function(module, exports) {
-
-	module.exports = require("cuid");
-
-/***/ },
-/* 49 */
+/* 44 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl");
 
 /***/ },
-/* 50 */
+/* 45 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl-locales-supported");
 
 /***/ },
-/* 51 */
+/* 46 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl/locale-data/jsonp/en");
 
 /***/ },
-/* 52 */
+/* 47 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl/locale-data/jsonp/fr");
 
 /***/ },
-/* 53 */
+/* 48 */
 /***/ function(module, exports) {
 
 	module.exports = require("isomorphic-fetch");
 
 /***/ },
-/* 54 */
-/***/ function(module, exports) {
-
-	module.exports = require("limax");
-
-/***/ },
-/* 55 */
+/* 49 */
 /***/ function(module, exports) {
 
 	module.exports = require("node-bittrex-api");
 
 /***/ },
-/* 56 */
+/* 50 */
 /***/ function(module, exports) {
 
 	module.exports = require("poloniex-api-node");
 
 /***/ },
-/* 57 */
+/* 51 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-intl/locale-data/en");
 
 /***/ },
-/* 58 */
+/* 52 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-intl/locale-data/fr");
 
 /***/ },
-/* 59 */
+/* 53 */
 /***/ function(module, exports) {
 
 	module.exports = require("recompose");
 
 /***/ },
-/* 60 */
+/* 54 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools");
 
 /***/ },
-/* 61 */
+/* 55 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools-dock-monitor");
 
 /***/ },
-/* 62 */
+/* 56 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools-log-monitor");
 
 /***/ },
-/* 63 */
+/* 57 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-thunk");
 
 /***/ },
-/* 64 */
-/***/ function(module, exports) {
-
-	module.exports = require("sanitize-html");
-
-/***/ },
-/* 65 */
+/* 58 */
 /***/ function(module, exports) {
 
 	module.exports = require("socket.io");
 
 /***/ },
-/* 66 */
+/* 59 */
 /***/ function(module, exports) {
 
 	module.exports = require("socket.io-client");

@@ -33,7 +33,7 @@ function mapStateToProps(state) {
 }
 
 // PostListPage.propTypes = {
-//     posts: PropTypes.arrayOf(PropTypes.shape({
+//     orders: PropTypes.arrayOf(PropTypes.shape({
 //         name: PropTypes.string.isRequired,
 //         title: PropTypes.string.isRequired,
 //         content: PropTypes.string.isRequired,

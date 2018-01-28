@@ -1,6 +1,5 @@
 import Express from 'express';
 import compression from 'compression';
-import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import path from 'path';
 import IntlWrapper from '../client/modules/Intl/IntlWrapper';
@@ -38,30 +37,16 @@ import Helmet from 'react-helmet';
 // Import required modules
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
-import posts from './routes/post.routes';
-import dummyData from './dummyData';
+import orders from './routes/order.routes';
 import serverConfig from './config';
 
-// Set native promises as mongoose promise
-mongoose.Promise = global.Promise;
-
-// MongoDB Connection
-mongoose.connect(serverConfig.mongoURL, (error) => {
-    if (error) {
-        console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
-        throw error;
-    }
-
-    // feed some dummy data in DB.
-    dummyData();
-});
 
 // Apply body Parser and server public assets and routes
 app.use(compression());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 app.use(Express.static(path.resolve(__dirname, '../dist/client')));
-app.use('/api', posts);
+app.use('/api', orders);
 
 // Render Initial HTML
 const renderFullPage = (html, initialState) => {
