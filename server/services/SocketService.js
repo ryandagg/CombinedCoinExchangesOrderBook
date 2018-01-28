@@ -3,8 +3,9 @@ import initPoloniex,  {transformPlxUpdate}from './PoloniexServices';
 import initBittrex, {transformBtxUpdate} from './BittrexServices';
 import {PLX_DEFAULT_MARKET, BTX_DEFAULT_MARKET, BTX, PLX} from './ServicesConstants';
 import Config from '../config';
+import App from '../server';
 
-const server = io.listen(Config.port);
+const server = io.listen(Config.socketPort);
 
 // todo: use namespaces and subscriptions properly instead of this hack
 let sequenceNumberByClient = new Map();
