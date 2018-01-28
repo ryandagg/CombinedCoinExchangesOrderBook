@@ -157,4 +157,3 @@ initSockets();
 
 export default app;
 
-console.log('change dist')
