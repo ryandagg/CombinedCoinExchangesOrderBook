@@ -37,7 +37,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 47);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -56,38 +56,6 @@
 /* 2 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-intl");
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	"use strict";
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	var port = process.env.PORT || 8000;
-	var socketPort = process.env.SOCKET_PORT || 3000;
-	var localHost = 'http://localhost';
-	var isDevMode = process.env.NODE_ENV === 'development';
-	var baseUrl = isDevMode ? '' : 'https://combinedcoinexchanges.herokuapp.com';
-	
-	console.log('process.env.NODE_ENV: ', process.env.NODE_ENV);
-	console.log('process.env.BASE_URL: ', process.env.BASE_URL);
-	
-	exports.default = {
-	    port: port,
-	    socketPort: socketPort,
-	    baseUrl: baseUrl || localHost + ':' + port,
-	    socketUrl: (baseUrl || localHost) + ':' + port
-	};
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
 	"use strict";
 	'use strict';
 	
@@ -104,56 +72,19 @@
 	var exchangeB = exports.exchangeB = BTX;
 
 /***/ },
-/* 5 */
+/* 3 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-helmet");
+	module.exports = require("react-intl");
 
 /***/ },
-/* 6 */
+/* 4 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-router");
 
 /***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.getCombinedOrderBookRequest = exports.setOrders = exports.SET_ORDERS = undefined;
-	
-	var _apiCaller = __webpack_require__(19);
-	
-	var _apiCaller2 = _interopRequireDefault(_apiCaller);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// Export Constants
-	var SET_ORDERS = exports.SET_ORDERS = 'SET_ORDERS';
-	
-	var setOrders = exports.setOrders = function setOrders(orders) {
-	    return {
-	        type: SET_ORDERS,
-	        orders: orders
-	    };
-	};
-	
-	var getCombinedOrderBookRequest = exports.getCombinedOrderBookRequest = function getCombinedOrderBookRequest() {
-	    return function (dispatch) {
-	        return (0, _apiCaller2.default)({ route: 'orders' }).then(function (_ref) {
-	            var orders = _ref.orders;
-	            return dispatch(setOrders(orders));
-	        });
-	    };
-	};
-
-/***/ },
-/* 8 */
+/* 5 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -273,7 +204,7 @@
 	        var side = exchange.get(lookUpKey);
 	        var order = side.get(rate);
 	
-	        if (type === 'orderBookModify') {
+	        if (type === 'orderBookModify' && quantity > 0) {
 	            if (order != null) {
 	                order.quantity = quantity;
 	
@@ -379,25 +310,51 @@
 	};
 
 /***/ },
-/* 9 */
+/* 6 */
+/***/ function(module, exports) {
+
+	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var port = process.env.PORT || 8000;
+	var localHost = 'http://localhost';
+	var isDevMode = process.env.NODE_ENV === 'development';
+	var baseUrl = isDevMode ? '' : 'https://combinedcoinexchanges.herokuapp.com';
+	
+	exports.default = {
+	    port: port,
+	    baseUrl: baseUrl || localHost + ':' + port
+	};
+
+/***/ },
+/* 7 */
 /***/ function(module, exports) {
 
 	module.exports = require("express");
 
 /***/ },
-/* 10 */
+/* 8 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-helmet");
+
+/***/ },
+/* 9 */
 /***/ function(module, exports) {
 
 	module.exports = require("socket.io");
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports) {
 
 	module.exports = require("webpack");
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -408,33 +365,33 @@
 	});
 	exports.localizationData = exports.enabledLanguages = undefined;
 	
-	var _reactIntl = __webpack_require__(2);
+	var _reactIntl = __webpack_require__(3);
 	
-	var _intl = __webpack_require__(50);
+	var _intl = __webpack_require__(49);
 	
 	var _intl2 = _interopRequireDefault(_intl);
 	
-	var _intlLocalesSupported = __webpack_require__(51);
+	var _intlLocalesSupported = __webpack_require__(50);
 	
 	var _intlLocalesSupported2 = _interopRequireDefault(_intlLocalesSupported);
 	
-	__webpack_require__(52);
+	__webpack_require__(51);
 	
-	var _en = __webpack_require__(60);
+	var _en = __webpack_require__(59);
 	
 	var _en2 = _interopRequireDefault(_en);
 	
-	var _en3 = __webpack_require__(37);
+	var _en3 = __webpack_require__(34);
 	
 	var _en4 = _interopRequireDefault(_en3);
 	
-	__webpack_require__(53);
+	__webpack_require__(52);
 	
-	var _fr = __webpack_require__(61);
+	var _fr = __webpack_require__(60);
 	
 	var _fr2 = _interopRequireDefault(_fr);
 	
-	var _fr3 = __webpack_require__(38);
+	var _fr3 = __webpack_require__(35);
 	
 	var _fr4 = _interopRequireDefault(_fr3);
 	
@@ -500,28 +457,7 @@
 	localizationData.fr.messages = flattenMessages(localizationData.fr.messages);
 
 /***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	"use strict";
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.toggleAddPost = toggleAddPost;
-	// Export Constants
-	var TOGGLE_ADD_POST = exports.TOGGLE_ADD_POST = 'TOGGLE_ADD_POST';
-	
-	// Export Actions
-	function toggleAddPost() {
-	    return {
-	        type: TOGGLE_ADD_POST
-	    };
-	}
-
-/***/ },
-/* 14 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -537,13 +473,13 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reduxDevtools = __webpack_require__(63);
+	var _reduxDevtools = __webpack_require__(62);
 	
-	var _reduxDevtoolsLogMonitor = __webpack_require__(65);
+	var _reduxDevtoolsLogMonitor = __webpack_require__(64);
 	
 	var _reduxDevtoolsLogMonitor2 = _interopRequireDefault(_reduxDevtoolsLogMonitor);
 	
-	var _reduxDevtoolsDockMonitor = __webpack_require__(64);
+	var _reduxDevtoolsDockMonitor = __webpack_require__(63);
 	
 	var _reduxDevtoolsDockMonitor2 = _interopRequireDefault(_reduxDevtoolsDockMonitor);
 	
@@ -555,7 +491,7 @@
 	}, void 0, _jsx(_reduxDevtoolsLogMonitor2.default, {})));
 
 /***/ },
-/* 15 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -570,7 +506,7 @@
 	
 	exports.switchLanguage = switchLanguage;
 	
-	var _setup = __webpack_require__(12);
+	var _setup = __webpack_require__(11);
 	
 	// Export Constants
 	var SWITCH_LANGUAGE = exports.SWITCH_LANGUAGE = 'SWITCH_LANGUAGE';
@@ -582,7 +518,7 @@
 	}
 
 /***/ },
-/* 16 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -591,117 +527,35 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	exports.getCombinedOrderBookRequest = exports.setOrders = exports.SET_ORDERS = undefined;
 	
-	var _PostActions = __webpack_require__(7);
+	var _apiCaller = __webpack_require__(16);
 	
-	// Initial State
-	var initialState = { data: [] };
-	
-	var PostReducer = function PostReducer() {
-	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-	    var action = arguments[1];
-	
-	    switch (action.type) {
-	        case _PostActions.SET_ORDERS:
-	            return {
-	                orders: action.orders
-	            };
-	        default:
-	            return state;
-	    }
-	};
-	
-	// Export Reducer
-	exports.default = PostReducer;
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
-	
-	// Import Style
-	
-	
-	// Import Actions
-	
-	
-	// Import Selectors
-	
-	
-	exports.PostDetailPage = PostDetailPage;
-	
-	var _react = __webpack_require__(0);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _reactRedux = __webpack_require__(1);
-	
-	var _reactHelmet = __webpack_require__(5);
-	
-	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
-	
-	var _reactIntl = __webpack_require__(2);
-	
-	var _PostListItem = {
-	    "single-post": "_3B15Q62CNe0LaxJ8BUZr5W",
-	    "post-title": "_3mZF-WLrnBUxaWr9zFi6Q_",
-	    "author-name": "_1cSDPptMi8rvUEB2tAonlW",
-	    "post-desc": "_3D8Fgk2edKTkFyBDsUEZ2u",
-	    "post-action": "_3S84cKmlvGO49pK1biPlXr",
-	    "divider": "y2SIF3ydn02JYMgeklO7S",
-	    "post-detail": "_3W9vrxIdnQ93EmH-x2UgJR"
-	};
-	
-	var _PostListItem2 = _interopRequireDefault(_PostListItem);
-	
-	var _PostActions = __webpack_require__(7);
-	
-	var _PostReducer = __webpack_require__(16);
+	var _apiCaller2 = _interopRequireDefault(_apiCaller);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var _ref = _jsx(_reactIntl.FormattedMessage, {
-	    id: 'by'
-	});
+	// Export Constants
+	var SET_ORDERS = exports.SET_ORDERS = 'SET_ORDERS';
 	
-	function PostDetailPage(props) {
-	    return _jsx('div', {}, void 0, _jsx(_reactHelmet2.default, {
-	        title: props.post.title
-	    }), _jsx('div', {
-	        className: _PostListItem2.default['single-post'] + ' ' + _PostListItem2.default['post-detail']
-	    }, void 0, _jsx('h3', {
-	        className: _PostListItem2.default['post-title']
-	    }, void 0, props.post.title), _jsx('p', {
-	        className: _PostListItem2.default['author-name']
-	    }, void 0, _ref, ' ', props.post.name), _jsx('p', {
-	        className: _PostListItem2.default['post-desc']
-	    }, void 0, props.post.content)));
-	}
-	
-	// Actions required to provide data for this component to render in server side.
-	PostDetailPage.need = [function (params) {
-	    return (0, _PostActions.fetchPost)(params.cuid);
-	}];
-	
-	// Retrieve data from store as props
-	function mapStateToProps(state, props) {
+	var setOrders = exports.setOrders = function setOrders(orders) {
 	    return {
-	        post: (0, _PostReducer.getPost)(state, props.params.cuid)
+	        type: SET_ORDERS,
+	        orders: orders
 	    };
-	}
+	};
 	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(PostDetailPage);
+	var getCombinedOrderBookRequest = exports.getCombinedOrderBookRequest = function getCombinedOrderBookRequest() {
+	    return function (dispatch) {
+	        return (0, _apiCaller2.default)({ route: 'orders' }).then(function (_ref) {
+	            var orders = _ref.orders;
+	            return dispatch(setOrders(orders));
+	        });
+	    };
+	};
 
 /***/ },
-/* 18 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -721,13 +575,13 @@
 	
 	var _reactRedux = __webpack_require__(1);
 	
-	var _OrderTables = __webpack_require__(44);
+	var _OrderTables = __webpack_require__(43);
 	
 	var _OrderTables2 = _interopRequireDefault(_OrderTables);
 	
-	var _PostActions = __webpack_require__(7);
+	var _OrderActions = __webpack_require__(14);
 	
-	var _ServicesConstants = __webpack_require__(4);
+	var _ServicesConstants = __webpack_require__(2);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -768,16 +622,16 @@
 	// Actions required to provide data for this component to render in sever side.
 	
 	
-	PostListPage.need = [_PostActions.getCombinedOrderBookRequest];
+	PostListPage.need = [_OrderActions.getCombinedOrderBookRequest];
 	
 	// Retrieve data from store as props
 	function mapStateToProps(state) {
 	    return {
-	        orders: state.posts.orders
+	        orders: state.orders.orders
 	    };
 	}
 	
-	// PostListPage.propTypes = {
+	// OrderBookPage.propTypes = {
 	//     orders: PropTypes.arrayOf(PropTypes.shape({
 	//         name: PropTypes.string.isRequired,
 	//         title: PropTypes.string.isRequired,
@@ -794,7 +648,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(PostListPage);
 
 /***/ },
-/* 19 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -806,11 +660,11 @@
 	exports.API_URL = undefined;
 	exports.default = callApi;
 	
-	var _isomorphicFetch = __webpack_require__(54);
+	var _isomorphicFetch = __webpack_require__(53);
 	
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 	
-	var _config = __webpack_require__(3);
+	var _config = __webpack_require__(6);
 	
 	var _config2 = _interopRequireDefault(_config);
 	
@@ -851,7 +705,7 @@
 	}
 
 /***/ },
-/* 20 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -864,17 +718,17 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _nodeBittrexApi = __webpack_require__(55);
+	var _nodeBittrexApi = __webpack_require__(54);
 	
 	var _nodeBittrexApi2 = _interopRequireDefault(_nodeBittrexApi);
 	
-	var _ServicesConstants = __webpack_require__(4);
+	var _ServicesConstants = __webpack_require__(2);
 	
-	var _apiCaller = __webpack_require__(19);
+	var _apiCaller = __webpack_require__(16);
 	
 	var _apiCaller2 = _interopRequireDefault(_apiCaller);
 	
-	var _OrderUtils = __webpack_require__(8);
+	var _OrderUtils = __webpack_require__(5);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -977,7 +831,7 @@
 	
 	    var newOrders = [];
 	    Fills.forEach(function (order) {
-	        var newOrder = btxOrderUpdateAdaptor(order);
+	        var newOrder = btxOrderUpdateAdaptor(_extends({}, order, { updateType: 'orderBookRemove' }));
 	        newOrders.push(_extends({}, newOrder, { type: 'bid' }));
 	        newOrders.push(_extends({}, newOrder, { type: 'ask' }));
 	    });
@@ -993,7 +847,7 @@
 	};
 
 /***/ },
-/* 21 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1008,15 +862,15 @@
 	
 	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 	
-	var _ServicesConstants = __webpack_require__(4);
+	var _ServicesConstants = __webpack_require__(2);
 	
-	var _OrderUtils = __webpack_require__(8);
+	var _OrderUtils = __webpack_require__(5);
 	
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
 	var init = function init() {
 	    return new Promise(function (resolve) {
-	        var Poloniex = __webpack_require__(56);
+	        var Poloniex = __webpack_require__(55);
 	
 	        var poloniex = new Poloniex();
 	
@@ -1120,13 +974,13 @@
 	exports.transformPlxUpdate = transformPlxUpdate;
 
 /***/ },
-/* 22 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux");
 
 /***/ },
-/* 23 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1141,7 +995,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactIntl = __webpack_require__(2);
+	var _reactIntl = __webpack_require__(3);
 	
 	var _reactRedux = __webpack_require__(1);
 	
@@ -1165,7 +1019,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(IntlWrapper);
 
 /***/ },
-/* 24 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1182,9 +1036,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRouter = __webpack_require__(6);
+	var _reactRouter = __webpack_require__(4);
 	
-	var _App = __webpack_require__(39);
+	var _App = __webpack_require__(36);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -1203,8 +1057,7 @@
 	 */
 	if (process.env.NODE_ENV !== 'production') {
 	    // Require async routes only in development for react-hot-reloader to work.
-	    __webpack_require__(18);
-	    __webpack_require__(17);
+	    __webpack_require__(15);
 	}
 	
 	// react-router setup with code-splitting
@@ -1215,20 +1068,13 @@
 	}, void 0, _jsx(_reactRouter.IndexRoute, {
 	    getComponent: function getComponent(nextState, cb) {
 	        Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
-	            cb(null, __webpack_require__(18).default);
-	        }).bind(null, __webpack_require__));
-	    }
-	}), _jsx(_reactRouter.Route, {
-	    path: '/posts/:slug-:cuid',
-	    getComponent: function getComponent(nextState, cb) {
-	        Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
-	            cb(null, __webpack_require__(17).default);
+	            cb(null, __webpack_require__(15).default);
 	        }).bind(null, __webpack_require__));
 	    }
 	}));
 
 /***/ },
-/* 25 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1239,17 +1085,17 @@
 	});
 	exports.configureStore = configureStore;
 	
-	var _redux = __webpack_require__(22);
+	var _redux = __webpack_require__(19);
 	
-	var _reduxThunk = __webpack_require__(66);
+	var _reduxThunk = __webpack_require__(65);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _DevTools = __webpack_require__(14);
+	var _DevTools = __webpack_require__(12);
 	
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 	
-	var _reducers = __webpack_require__(45);
+	var _reducers = __webpack_require__(44);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -1285,7 +1131,7 @@
 	}
 
 /***/ },
-/* 26 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1295,9 +1141,9 @@
 	  value: true
 	});
 	
-	var _express = __webpack_require__(9);
+	var _express = __webpack_require__(7);
 	
-	var _orders = __webpack_require__(46);
+	var _orders = __webpack_require__(45);
 	
 	var router = new _express.Router();
 	
@@ -1307,7 +1153,7 @@
 	exports.default = router;
 
 /***/ },
-/* 27 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1320,23 +1166,19 @@
 	
 	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 	
-	var _socket = __webpack_require__(10);
+	var _socket = __webpack_require__(9);
 	
 	var _socket2 = _interopRequireDefault(_socket);
 	
-	var _PoloniexServices = __webpack_require__(21);
+	var _PoloniexServices = __webpack_require__(18);
 	
 	var _PoloniexServices2 = _interopRequireDefault(_PoloniexServices);
 	
-	var _BittrexServices = __webpack_require__(20);
+	var _BittrexServices = __webpack_require__(17);
 	
 	var _BittrexServices2 = _interopRequireDefault(_BittrexServices);
 	
-	var _ServicesConstants = __webpack_require__(4);
-	
-	var _config = __webpack_require__(3);
-	
-	var _config2 = _interopRequireDefault(_config);
+	var _ServicesConstants = __webpack_require__(2);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1374,8 +1216,6 @@
 	var initSockets = exports.initSockets = function initSockets(server) {
 	    var serverIo = (0, _socket2.default)(server);
 	
-	    // server.listen(80);
-	
 	    // event fired every time a new client connects:
 	    serverIo.on('connection', function (socket) {
 	        console.info('Client connected [id=' + socket.id + ']');
@@ -1388,6 +1228,7 @@
 	            console.info('Client gone [id=' + socket.id + ']');
 	        });
 	    });
+	
 	    (0, _PoloniexServices2.default)().then(function (poloniex) {
 	        poloniex.on('message', function (channelName, data, seq) {
 	            if (channelName === _ServicesConstants.PLX_DEFAULT_MARKET && data[0] && data[0].type !== 'orderBook') {
@@ -1412,7 +1253,7 @@
 	};
 
 /***/ },
-/* 28 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1423,7 +1264,7 @@
 	});
 	exports.fetchComponentData = fetchComponentData;
 	
-	var _promiseUtils = __webpack_require__(49);
+	var _promiseUtils = __webpack_require__(48);
 	
 	function fetchComponentData(store, components, params) {
 	    var needs = components.reduce(function (prev, current) {
@@ -1439,16 +1280,16 @@
 	  */
 
 /***/ },
-/* 29 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';
 	
-	var webpack = __webpack_require__(11);
-	var cssnext = __webpack_require__(57);
-	var postcssFocus = __webpack_require__(58);
-	var postcssReporter = __webpack_require__(59);
+	var webpack = __webpack_require__(10);
+	var cssnext = __webpack_require__(56);
+	var postcssFocus = __webpack_require__(57);
+	var postcssReporter = __webpack_require__(58);
 	
 	module.exports = {
 	  devtool: 'cheap-module-eval-source-map',
@@ -1513,49 +1354,49 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, ""))
 
 /***/ },
-/* 30 */
+/* 27 */
 /***/ function(module, exports) {
 
 	module.exports = require("body-parser");
 
 /***/ },
-/* 31 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = require("compression");
 
 /***/ },
-/* 32 */
+/* 29 */
 /***/ function(module, exports) {
 
 	module.exports = require("http");
 
 /***/ },
-/* 33 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = require("path");
 
 /***/ },
-/* 34 */
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-dom/server");
 
 /***/ },
-/* 35 */
+/* 32 */
 /***/ function(module, exports) {
 
 	module.exports = require("webpack-dev-middleware");
 
 /***/ },
-/* 36 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = require("webpack-hot-middleware");
 
 /***/ },
-/* 37 */
+/* 34 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1572,7 +1413,7 @@
 	};
 
 /***/ },
-/* 38 */
+/* 35 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1602,7 +1443,7 @@
 	};
 
 /***/ },
-/* 39 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1629,25 +1470,23 @@
 	
 	var _App2 = _interopRequireDefault(_App);
 	
-	var _reactHelmet = __webpack_require__(5);
+	var _reactHelmet = __webpack_require__(8);
 	
 	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 	
-	var _DevTools = __webpack_require__(14);
+	var _DevTools = __webpack_require__(12);
 	
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 	
-	var _Header = __webpack_require__(42);
+	var _Header = __webpack_require__(40);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _Footer = __webpack_require__(41);
+	var _Footer = __webpack_require__(39);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
-	var _AppActions = __webpack_require__(13);
-	
-	var _IntlActions = __webpack_require__(15);
+	var _IntlActions = __webpack_require__(13);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1669,10 +1508,6 @@
 	        _classCallCheck(this, App);
 	
 	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
-	
-	        _this.toggleAddPostSection = function () {
-	            _this.props.dispatch((0, _AppActions.toggleAddPost)());
-	        };
 	
 	        _this.state = { showDevTools: false };
 	        return _this;
@@ -1702,8 +1537,7 @@
 	                switchLanguage: function switchLanguage(lang) {
 	                    return _this2.props.dispatch((0, _IntlActions.switchLanguage)(lang));
 	                },
-	                intl: this.props.intl,
-	                toggleAddPost: this.toggleAddPostSection
+	                intl: this.props.intl
 	            }), _jsx('div', {
 	                className: _App2.default.container
 	            }, void 0, this.props.children), _ref2));
@@ -1723,7 +1557,28 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
 
 /***/ },
-/* 40 */
+/* 37 */
+/***/ function(module, exports) {
+
+	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.toggleAddPost = toggleAddPost;
+	// Export Constants
+	var TOGGLE_ADD_POST = exports.TOGGLE_ADD_POST = 'TOGGLE_ADD_POST';
+	
+	// Export Actions
+	function toggleAddPost() {
+	    return {
+	        type: TOGGLE_ADD_POST
+	    };
+	}
+
+/***/ },
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1734,7 +1589,7 @@
 	});
 	exports.getShowAddPost = undefined;
 	
-	var _AppActions = __webpack_require__(13);
+	var _AppActions = __webpack_require__(37);
 	
 	// Initial State
 	var initialState = {
@@ -1768,7 +1623,7 @@
 	exports.default = AppReducer;
 
 /***/ },
-/* 41 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1792,7 +1647,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactIntl = __webpack_require__(2);
+	var _reactIntl = __webpack_require__(3);
 	
 	var _Footer = {
 	    "footer": "_3vPEi87A1wyh1iLR3bsBGf"
@@ -1806,26 +1661,17 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var _ref = _jsx('p', {}, void 0, '\xA9 2016 \xB7 Hashnode \xB7 LinearBytes Inc.');
-	
-	var _ref2 = _jsx('p', {}, void 0, _jsx(_reactIntl.FormattedMessage, {
-	    id: 'twitterMessage'
-	}), ' : ', _jsx('a', {
-	    href: 'https://twitter.com/@mern_io',
-	    target: '_Blank'
-	}, void 0, '@mern_io'));
-	
 	function Footer() {
 	    return _jsx('div', {
 	        style: { background: '#FFF url(' + _headerBk2.default + ') center' },
 	        className: _Footer2.default.footer
-	    }, void 0, _ref, _ref2);
+	    }, void 0);
 	}
 	
 	exports.default = Footer;
 
 /***/ },
-/* 42 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1843,9 +1689,9 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactRouter = __webpack_require__(6);
+	var _reactRouter = __webpack_require__(4);
 	
-	var _reactIntl = __webpack_require__(2);
+	var _reactIntl = __webpack_require__(3);
 	
 	var _Header = {
 	    "header": "_2sEZYfHlvDy9uXqVIXG1aM",
@@ -1879,7 +1725,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 43 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1891,9 +1737,9 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _setup = __webpack_require__(12);
+	var _setup = __webpack_require__(11);
 	
-	var _IntlActions = __webpack_require__(15);
+	var _IntlActions = __webpack_require__(13);
 	
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
@@ -1926,7 +1772,40 @@
 	exports.default = IntlReducer;
 
 /***/ },
-/* 44 */
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _OrderActions = __webpack_require__(14);
+	
+	// Initial State
+	var initialState = { data: [] };
+	
+	var PostReducer = function PostReducer() {
+	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
+	    var action = arguments[1];
+	
+	    switch (action.type) {
+	        case _OrderActions.SET_ORDERS:
+	            return {
+	                orders: action.orders
+	            };
+	        default:
+	            return state;
+	    }
+	};
+	
+	// Export Reducer
+	exports.default = PostReducer;
+
+/***/ },
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1938,33 +1817,29 @@
 	
 	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
 	
-	var _recompose = __webpack_require__(62);
+	var _recompose = __webpack_require__(61);
 	
 	var _react = __webpack_require__(0);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _socket = __webpack_require__(67);
+	var _socket = __webpack_require__(66);
 	
 	var _socket2 = _interopRequireDefault(_socket);
 	
-	var _OrderUtils = __webpack_require__(8);
-	
-	var _config = __webpack_require__(3);
-	
-	var _config2 = _interopRequireDefault(_config);
+	var _OrderUtils = __webpack_require__(5);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var _ref2 = _jsx('thead', {}, void 0, _jsx('tr', {}, void 0, _jsx('th', {
 	    scope: 'col'
-	}, void 0, 'sum'), _jsx('th', {
+	}, void 0, 'Sum (ETH)'), _jsx('th', {
 	    scope: 'col'
-	}, void 0, 'rate'), _jsx('th', {
+	}, void 0, 'Price'), _jsx('th', {
 	    scope: 'col'
-	}, void 0, 'quantity'), _jsx('th', {
+	}, void 0, 'Quantity (ETH)'), _jsx('th', {
 	    scope: 'col'
-	}, void 0, 'exchange')));
+	}, void 0, 'Exchange')));
 	
 	var OrderTable = function OrderTable(_ref) {
 	    var ordersBody = _ref.ordersBody,
@@ -1987,9 +1862,12 @@
 	    var asksBody = _ref3.asksBody,
 	        bidsBody = _ref3.bidsBody,
 	        asksSum = _ref3.asksSum,
-	        bidsSum = _ref3.bidsSum;
+	        bidsSum = _ref3.bidsSum,
+	        canArbitrage = _ref3.canArbitrage;
 	
-	    return _jsx('div', {
+	    return _jsx('div', {}, void 0, _jsx('div', {
+	        style: { height: '15px', color: 'green' }
+	    }, void 0, canArbitrage ? 'Arbitrage opportunity between exchanges' : ''), _jsx('div', {
 	        className: 'row'
 	    }, void 0, _jsx(OrderTable, {
 	        className: 'col-6',
@@ -2001,7 +1879,7 @@
 	        ordersBody: bidsBody,
 	        sum: bidsSum,
 	        title: 'Bids'
-	    }));
+	    })));
 	}
 	
 	var buildRow = function buildRow(_ref4) {
@@ -2010,7 +1888,7 @@
 	        quantity = _ref4.quantity,
 	        sum = _ref4.sum;
 	
-	    return _jsx('tr', {}, rate + '-' + quantity, _jsx('td', {}, void 0, sum.toString().slice(0, 8)), _jsx('td', {}, void 0, rate.toString().slice(0, 8)), _jsx('td', {}, void 0, quantity.toString().slice(0, 8)), _jsx('td', {}, void 0, exchangeKey));
+	    return _jsx('tr', {}, rate + '-' + quantity, _jsx('td', {}, void 0, sum.toString().slice(0, 8)), _jsx('td', {}, void 0, rate.toString().slice(0, 8)), _jsx('td', {}, void 0, quantity.toString().slice(0, 10)), _jsx('td', {}, void 0, exchangeKey));
 	};
 	
 	exports.default = (0, _recompose.compose)(
@@ -2038,7 +1916,8 @@
 	        asksBody: asks.slice(0, 50).map(buildRow),
 	        asksSum: asks[asks.length - 1].sum.toString().slice(0, 8),
 	        bidsBody: bids.slice(0, 50).map(buildRow),
-	        bidsSum: bids[bids.length - 1].sum.toString().slice(0, 8)
+	        bidsSum: bids[bids.length - 1].sum.toString().slice(0, 8),
+	        canArbitrage: asks[0].rate < bids[0].rate
 	    };
 	}), (0, _recompose.lifecycle)({
 	    componentDidMount: function componentDidMount() {
@@ -2059,7 +1938,7 @@
 	}))(OrderTables);
 
 /***/ },
-/* 45 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2069,17 +1948,17 @@
 	    value: true
 	});
 	
-	var _redux = __webpack_require__(22);
+	var _redux = __webpack_require__(19);
 	
-	var _AppReducer = __webpack_require__(40);
+	var _AppReducer = __webpack_require__(38);
 	
 	var _AppReducer2 = _interopRequireDefault(_AppReducer);
 	
-	var _PostReducer = __webpack_require__(16);
+	var _OrdersReducer = __webpack_require__(42);
 	
-	var _PostReducer2 = _interopRequireDefault(_PostReducer);
+	var _OrdersReducer2 = _interopRequireDefault(_OrdersReducer);
 	
-	var _IntlReducer = __webpack_require__(43);
+	var _IntlReducer = __webpack_require__(41);
 	
 	var _IntlReducer2 = _interopRequireDefault(_IntlReducer);
 	
@@ -2091,14 +1970,14 @@
 	 */
 	exports.default = (0, _redux.combineReducers)({
 	    app: _AppReducer2.default,
-	    posts: _PostReducer2.default,
+	    orders: _OrdersReducer2.default,
 	    intl: _IntlReducer2.default
 	});
 	
 	// Import Reducers
 
 /***/ },
-/* 46 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2109,7 +1988,7 @@
 	});
 	exports.getCombinedOrderBookRequest = getCombinedOrderBookRequest;
 	
-	var _CombinedExchangeServices = __webpack_require__(48);
+	var _CombinedExchangeServices = __webpack_require__(47);
 	
 	function getCombinedOrderBookRequest(req, res) {
 	    (0, _CombinedExchangeServices.getCombinedOrderBook)().then(function (orders) {
@@ -2120,7 +1999,7 @@
 	}
 
 /***/ },
-/* 47 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2135,53 +2014,53 @@
 	// Webpack Requirements
 	
 	
-	var _express = __webpack_require__(9);
+	var _express = __webpack_require__(7);
 	
 	var _express2 = _interopRequireDefault(_express);
 	
-	var _compression = __webpack_require__(31);
+	var _compression = __webpack_require__(28);
 	
 	var _compression2 = _interopRequireDefault(_compression);
 	
-	var _bodyParser = __webpack_require__(30);
+	var _bodyParser = __webpack_require__(27);
 	
 	var _bodyParser2 = _interopRequireDefault(_bodyParser);
 	
-	var _path = __webpack_require__(33);
+	var _path = __webpack_require__(30);
 	
 	var _path2 = _interopRequireDefault(_path);
 	
-	var _http = __webpack_require__(32);
+	var _http = __webpack_require__(29);
 	
 	var _http2 = _interopRequireDefault(_http);
 	
-	var _IntlWrapper = __webpack_require__(23);
+	var _IntlWrapper = __webpack_require__(20);
 	
 	var _IntlWrapper2 = _interopRequireDefault(_IntlWrapper);
 	
-	var _SocketService = __webpack_require__(27);
+	var _SocketService = __webpack_require__(24);
 	
-	var _socket = __webpack_require__(10);
+	var _socket = __webpack_require__(9);
 	
 	var _socket2 = _interopRequireDefault(_socket);
 	
-	var _webpack = __webpack_require__(11);
+	var _webpack = __webpack_require__(10);
 	
 	var _webpack2 = _interopRequireDefault(_webpack);
 	
-	var _webpackConfig = __webpack_require__(29);
+	var _webpackConfig = __webpack_require__(26);
 	
 	var _webpackConfig2 = _interopRequireDefault(_webpackConfig);
 	
-	var _webpackDevMiddleware = __webpack_require__(35);
+	var _webpackDevMiddleware = __webpack_require__(32);
 	
 	var _webpackDevMiddleware2 = _interopRequireDefault(_webpackDevMiddleware);
 	
-	var _webpackHotMiddleware = __webpack_require__(36);
+	var _webpackHotMiddleware = __webpack_require__(33);
 	
 	var _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);
 	
-	var _store = __webpack_require__(25);
+	var _store = __webpack_require__(22);
 	
 	var _reactRedux = __webpack_require__(1);
 	
@@ -2189,25 +2068,25 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _server = __webpack_require__(34);
+	var _server = __webpack_require__(31);
 	
-	var _reactRouter = __webpack_require__(6);
+	var _reactRouter = __webpack_require__(4);
 	
-	var _reactHelmet = __webpack_require__(5);
+	var _reactHelmet = __webpack_require__(8);
 	
 	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 	
-	var _routes = __webpack_require__(24);
+	var _routes = __webpack_require__(21);
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
-	var _fetchData = __webpack_require__(28);
+	var _fetchData = __webpack_require__(25);
 	
-	var _order = __webpack_require__(26);
+	var _order = __webpack_require__(23);
 	
 	var _order2 = _interopRequireDefault(_order);
 	
-	var _config = __webpack_require__(3);
+	var _config = __webpack_require__(6);
 	
 	var _config2 = _interopRequireDefault(_config);
 	
@@ -2300,7 +2179,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, "server"))
 
 /***/ },
-/* 48 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2311,9 +2190,9 @@
 	});
 	exports.getCombinedOrderBook = getCombinedOrderBook;
 	
-	var _PoloniexServices = __webpack_require__(21);
+	var _PoloniexServices = __webpack_require__(18);
 	
-	var _BittrexServices = __webpack_require__(20);
+	var _BittrexServices = __webpack_require__(17);
 	
 	function getCombinedOrderBook() {
 	    return Promise.all([(0, _PoloniexServices.getPoloniexOrderBook)(), (0, _BittrexServices.getBittrexOrderBook)()])
@@ -2328,7 +2207,7 @@
 	}
 
 /***/ },
-/* 49 */
+/* 48 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2359,109 +2238,109 @@
 	}
 
 /***/ },
-/* 50 */
+/* 49 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl");
 
 /***/ },
-/* 51 */
+/* 50 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl-locales-supported");
 
 /***/ },
-/* 52 */
+/* 51 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl/locale-data/jsonp/en");
 
 /***/ },
-/* 53 */
+/* 52 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl/locale-data/jsonp/fr");
 
 /***/ },
-/* 54 */
+/* 53 */
 /***/ function(module, exports) {
 
 	module.exports = require("isomorphic-fetch");
 
 /***/ },
-/* 55 */
+/* 54 */
 /***/ function(module, exports) {
 
 	module.exports = require("node-bittrex-api");
 
 /***/ },
-/* 56 */
+/* 55 */
 /***/ function(module, exports) {
 
 	module.exports = require("poloniex-api-node");
 
 /***/ },
-/* 57 */
+/* 56 */
 /***/ function(module, exports) {
 
 	module.exports = require("postcss-cssnext");
 
 /***/ },
-/* 58 */
+/* 57 */
 /***/ function(module, exports) {
 
 	module.exports = require("postcss-focus");
 
 /***/ },
-/* 59 */
+/* 58 */
 /***/ function(module, exports) {
 
 	module.exports = require("postcss-reporter");
 
 /***/ },
-/* 60 */
+/* 59 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-intl/locale-data/en");
 
 /***/ },
-/* 61 */
+/* 60 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-intl/locale-data/fr");
 
 /***/ },
-/* 62 */
+/* 61 */
 /***/ function(module, exports) {
 
 	module.exports = require("recompose");
 
 /***/ },
-/* 63 */
+/* 62 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools");
 
 /***/ },
-/* 64 */
+/* 63 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools-dock-monitor");
 
 /***/ },
-/* 65 */
+/* 64 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools-log-monitor");
 
 /***/ },
-/* 66 */
+/* 65 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-thunk");
 
 /***/ },
-/* 67 */
+/* 66 */
 /***/ function(module, exports) {
 
 	module.exports = require("socket.io-client");

@@ -15,8 +15,6 @@ const notify = (event, message) => {
 export const initSockets = (server) => {
     const serverIo = io(server);
 
-    // server.listen(80);
-
     // event fired every time a new client connects:
     serverIo.on('connection', (socket) => {
         console.info(`Client connected [id=${socket.id}]`);
@@ -29,6 +27,7 @@ export const initSockets = (server) => {
             console.info(`Client gone [id=${socket.id}]`);
         });
     });
+
     initPoloniex().then((poloniex) => {
         poloniex.on('message', (channelName, data, seq) => {
             if (channelName === PLX_DEFAULT_MARKET && data[0] && data[0].type !== 'orderBook') {
