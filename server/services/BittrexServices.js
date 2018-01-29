@@ -80,7 +80,7 @@ export const transformBtxUpdate = (data) => {
     const {Fills, Sells, Buys} = data;
     const newOrders = [];
     Fills.forEach((order) => {
-        const newOrder = btxOrderUpdateAdaptor(order);
+        const newOrder = btxOrderUpdateAdaptor({...order, updateType: 'orderBookRemove'});
         newOrders.push({...newOrder, type: 'bid'});
         newOrders.push({...newOrder, type: 'ask'});
     });
