@@ -11,9 +11,9 @@ const OrderTable = ({ordersBody, title, className, sum}) => {
             <table className="table table-sm table-striped table-bordered font-size-h6">
                 <thead>
                 <tr>
-                    <th scope="col">sum</th>
+                    <th scope="col">sum (ETH)</th>
                     <th scope="col">rate</th>
-                    <th scope="col">quantity</th>
+                    <th scope="col">quantity (ETH)</th>
                     <th scope="col">exchange</th>
                 </tr>
                 </thead>
@@ -50,7 +50,7 @@ const buildRow = ({rate, exchangeKey, quantity, sum}) => {
         <tr key={`${rate}-${quantity}`}>
             <td>{sum.toString().slice(0, 8)}</td>
             <td>{rate.toString().slice(0, 8)}</td>
-            <td>{quantity.toString().slice(0, 8)}</td>
+            <td>{quantity.toString().slice(0, 10)}</td>
             <td>{exchangeKey}</td>
         </tr>
     );
