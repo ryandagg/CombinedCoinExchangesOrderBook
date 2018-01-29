@@ -79,10 +79,10 @@ export const mergeNewOrders = ({newOrders, orders, exchangeKey}) => {
         const side = exchange.get(lookUpKey);
         const order = side.get(rate);
 
-        if (type === 'orderBookModify') {
-            if (order != null && quantity > 0) {
+        if (type === 'orderBookModify' && quantity > 0) {
+            if (order != null) {
                 order.quantity = quantity;
-                
+
                 side.set(rate, order);
             } else {
                 const insertionArr = insertions[lookUpKey];
