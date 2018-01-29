@@ -1,7 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import PostList from '../../components/OrderTables';
-import { getCombinedOrderBookRequest } from '../../PostActions';
+import { getCombinedOrderBookRequest } from '../../OrderActions';
 import { exchangeA, exchangeB, PLX_DEFAULT_MARKET } from '../../../../../server/services/ServicesConstants';
 
 class PostListPage extends Component {

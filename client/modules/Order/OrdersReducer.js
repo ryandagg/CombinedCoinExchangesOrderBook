@@ -1,4 +1,4 @@
-import { SET_ORDERS } from './PostActions';
+import { SET_ORDERS } from './OrderActions';
 
 // Initial State
 const initialState = { data: [] };
