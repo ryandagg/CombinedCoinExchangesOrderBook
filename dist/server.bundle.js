@@ -37,7 +37,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 19);
+/******/ 	return __webpack_require__(__webpack_require__.s = 47);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -81,7 +81,7 @@
 	    port: port,
 	    socketPort: socketPort,
 	    baseUrl: baseUrl || localHost + ':' + port,
-	    socketUrl: (baseUrl || localHost) + ':' + socketPort
+	    socketUrl: (baseUrl || localHost) + ':' + port
 	};
 
 /***/ },
@@ -127,7 +127,7 @@
 	});
 	exports.getCombinedOrderBookRequest = exports.setOrders = exports.SET_ORDERS = undefined;
 	
-	var _apiCaller = __webpack_require__(18);
+	var _apiCaller = __webpack_require__(19);
 	
 	var _apiCaller2 = _interopRequireDefault(_apiCaller);
 	
@@ -388,10 +388,16 @@
 /* 10 */
 /***/ function(module, exports) {
 
-	module.exports = require("webpack");
+	module.exports = require("socket.io");
 
 /***/ },
 /* 11 */
+/***/ function(module, exports) {
+
+	module.exports = require("webpack");
+
+/***/ },
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -404,31 +410,31 @@
 	
 	var _reactIntl = __webpack_require__(2);
 	
-	var _intl = __webpack_require__(48);
+	var _intl = __webpack_require__(50);
 	
 	var _intl2 = _interopRequireDefault(_intl);
 	
-	var _intlLocalesSupported = __webpack_require__(49);
+	var _intlLocalesSupported = __webpack_require__(51);
 	
 	var _intlLocalesSupported2 = _interopRequireDefault(_intlLocalesSupported);
 	
-	__webpack_require__(50);
+	__webpack_require__(52);
 	
-	var _en = __webpack_require__(58);
+	var _en = __webpack_require__(60);
 	
 	var _en2 = _interopRequireDefault(_en);
 	
-	var _en3 = __webpack_require__(36);
+	var _en3 = __webpack_require__(37);
 	
 	var _en4 = _interopRequireDefault(_en3);
 	
-	__webpack_require__(51);
+	__webpack_require__(53);
 	
-	var _fr = __webpack_require__(59);
+	var _fr = __webpack_require__(61);
 	
 	var _fr2 = _interopRequireDefault(_fr);
 	
-	var _fr3 = __webpack_require__(37);
+	var _fr3 = __webpack_require__(38);
 	
 	var _fr4 = _interopRequireDefault(_fr3);
 	
@@ -494,7 +500,7 @@
 	localizationData.fr.messages = flattenMessages(localizationData.fr.messages);
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -515,7 +521,7 @@
 	}
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -531,13 +537,13 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reduxDevtools = __webpack_require__(61);
+	var _reduxDevtools = __webpack_require__(63);
 	
-	var _reduxDevtoolsLogMonitor = __webpack_require__(63);
+	var _reduxDevtoolsLogMonitor = __webpack_require__(65);
 	
 	var _reduxDevtoolsLogMonitor2 = _interopRequireDefault(_reduxDevtoolsLogMonitor);
 	
-	var _reduxDevtoolsDockMonitor = __webpack_require__(62);
+	var _reduxDevtoolsDockMonitor = __webpack_require__(64);
 	
 	var _reduxDevtoolsDockMonitor2 = _interopRequireDefault(_reduxDevtoolsDockMonitor);
 	
@@ -549,7 +555,7 @@
 	}, void 0, _jsx(_reduxDevtoolsLogMonitor2.default, {})));
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -564,7 +570,7 @@
 	
 	exports.switchLanguage = switchLanguage;
 	
-	var _setup = __webpack_require__(11);
+	var _setup = __webpack_require__(12);
 	
 	// Export Constants
 	var SWITCH_LANGUAGE = exports.SWITCH_LANGUAGE = 'SWITCH_LANGUAGE';
@@ -576,7 +582,7 @@
 	}
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -609,7 +615,7 @@
 	exports.default = PostReducer;
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -658,7 +664,7 @@
 	
 	var _PostActions = __webpack_require__(7);
 	
-	var _PostReducer = __webpack_require__(15);
+	var _PostReducer = __webpack_require__(16);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -695,7 +701,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(PostDetailPage);
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -715,7 +721,7 @@
 	
 	var _reactRedux = __webpack_require__(1);
 	
-	var _OrderTables = __webpack_require__(43);
+	var _OrderTables = __webpack_require__(44);
 	
 	var _OrderTables2 = _interopRequireDefault(_OrderTables);
 	
@@ -788,7 +794,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(PostListPage);
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -800,7 +806,7 @@
 	exports.API_URL = undefined;
 	exports.default = callApi;
 	
-	var _isomorphicFetch = __webpack_require__(52);
+	var _isomorphicFetch = __webpack_require__(54);
 	
 	var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
 	
@@ -845,178 +851,6 @@
 	}
 
 /***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
-	
-	// Webpack Requirements
-	
-	
-	var _express = __webpack_require__(9);
-	
-	var _express2 = _interopRequireDefault(_express);
-	
-	var _compression = __webpack_require__(31);
-	
-	var _compression2 = _interopRequireDefault(_compression);
-	
-	var _bodyParser = __webpack_require__(30);
-	
-	var _bodyParser2 = _interopRequireDefault(_bodyParser);
-	
-	var _path = __webpack_require__(32);
-	
-	var _path2 = _interopRequireDefault(_path);
-	
-	var _IntlWrapper = __webpack_require__(23);
-	
-	var _IntlWrapper2 = _interopRequireDefault(_IntlWrapper);
-	
-	var _SocketService = __webpack_require__(27);
-	
-	var _webpack = __webpack_require__(10);
-	
-	var _webpack2 = _interopRequireDefault(_webpack);
-	
-	var _webpackConfig = __webpack_require__(29);
-	
-	var _webpackConfig2 = _interopRequireDefault(_webpackConfig);
-	
-	var _webpackDevMiddleware = __webpack_require__(34);
-	
-	var _webpackDevMiddleware2 = _interopRequireDefault(_webpackDevMiddleware);
-	
-	var _webpackHotMiddleware = __webpack_require__(35);
-	
-	var _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);
-	
-	var _store = __webpack_require__(25);
-	
-	var _reactRedux = __webpack_require__(1);
-	
-	var _react = __webpack_require__(0);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _server = __webpack_require__(33);
-	
-	var _reactRouter = __webpack_require__(6);
-	
-	var _reactHelmet = __webpack_require__(5);
-	
-	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
-	
-	var _routes = __webpack_require__(24);
-	
-	var _routes2 = _interopRequireDefault(_routes);
-	
-	var _fetchData = __webpack_require__(28);
-	
-	var _order = __webpack_require__(26);
-	
-	var _order2 = _interopRequireDefault(_order);
-	
-	var _config = __webpack_require__(3);
-	
-	var _config2 = _interopRequireDefault(_config);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// Initialize the Express App
-	var app = new _express2.default();
-	
-	// Set Development modes checks
-	var isDevMode = process.env.NODE_ENV === 'development' || false;
-	var isProdMode = process.env.NODE_ENV === 'production' || false;
-	
-	// Run Webpack dev server in development mode
-	if (isDevMode) {
-	    var compiler = (0, _webpack2.default)(_webpackConfig2.default);
-	    app.use((0, _webpackDevMiddleware2.default)(compiler, { noInfo: true, publicPath: _webpackConfig2.default.output.publicPath }));
-	    app.use((0, _webpackHotMiddleware2.default)(compiler));
-	}
-	
-	// React And Redux Setup
-	
-	
-	// Import required modules
-	
-	
-	// Apply body Parser and server public assets and routes
-	app.use((0, _compression2.default)());
-	app.use(_bodyParser2.default.json({ limit: '20mb' }));
-	app.use(_bodyParser2.default.urlencoded({ limit: '20mb', extended: false }));
-	app.use(_express2.default.static(_path2.default.resolve(__dirname, '../dist/client')));
-	app.use('/api', _order2.default);
-	
-	// Render Initial HTML
-	var renderFullPage = function renderFullPage(html, initialState) {
-	    var head = _reactHelmet2.default.rewind();
-	
-	    // Import Manifests
-	    var assetsManifest = process.env.webpackAssets && JSON.parse(process.env.webpackAssets);
-	    var chunkManifest = process.env.webpackChunkAssets && JSON.parse(process.env.webpackChunkAssets);
-	
-	    return '\n    <!doctype html>\n    <html>\n      <head>\n        ' + head.base.toString() + '\n        ' + head.title.toString() + '\n        ' + head.meta.toString() + '\n        ' + head.link.toString() + '\n        ' + head.script.toString() + '\n\n        ' + (isProdMode ? '<link rel=\'stylesheet\' href=\'' + assetsManifest['/app.css'] + '\' />' : '') + '\n        <link href=\'https://fonts.googleapis.com/css?family=Lato:400,300,700\' rel=\'stylesheet\' type=\'text/css\'/>\n        <link href=\'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\' rel=\'stylesheet\' type=\'text/css\'/>\n      </head>\n      <body>\n        <div id="root">' + html + '</div>\n        <script>\n          window.__INITIAL_STATE__ = ' + JSON.stringify(initialState) + ';\n          ' + (isProdMode ? '//<![CDATA[\n          window.webpackManifest = ' + JSON.stringify(chunkManifest) + ';\n          //]]>' : '') + '\n        </script>\n        <script src=\'' + (isProdMode ? assetsManifest['/vendor.js'] : '/vendor.js') + '\'></script>\n        <script src=\'' + (isProdMode ? assetsManifest['/app.js'] : '/app.js') + '\'></script>\n      </body>\n    </html>\n  ';
-	};
-	
-	var renderError = function renderError(err) {
-	    var softTab = '&#32;&#32;&#32;&#32;';
-	    var errTrace = isProdMode ? ':<br><br><pre style="color:red">' + softTab + err.stack.replace(/\n/g, '<br>' + softTab) + '</pre>' : '';
-	    return renderFullPage('Server Error' + errTrace, {});
-	};
-	
-	// Server Side Rendering based on routes matched by React-router.
-	app.use(function (req, res, next) {
-	    (0, _reactRouter.match)({ routes: _routes2.default, location: req.url }, function (err, redirectLocation, renderProps) {
-	        if (err) {
-	            return res.status(500).end(renderError(err));
-	        }
-	
-	        if (redirectLocation) {
-	            return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-	        }
-	
-	        if (!renderProps) {
-	            return next();
-	        }
-	
-	        var store = (0, _store.configureStore)();
-	
-	        return (0, _fetchData.fetchComponentData)(store, renderProps.components, renderProps.params).then(function () {
-	            var initialView = (0, _server.renderToString)(_jsx(_reactRedux.Provider, {
-	                store: store
-	            }, void 0, _jsx(_IntlWrapper2.default, {}, void 0, _react2.default.createElement(_reactRouter.RouterContext, renderProps))));
-	            var finalState = store.getState();
-	
-	            res.set('Content-Type', 'text/html').status(200).end(renderFullPage(initialView, finalState));
-	        }).catch(function (error) {
-	            return next(error);
-	        });
-	    });
-	});
-	
-	// start app
-	app.listen(_config2.default.port, function (error) {
-	    if (!error) {
-	        console.log('MERN is running on port: ' + _config2.default.port + '! Build something amazing!'); // eslint-disable-line
-	    }
-	});
-	
-	(0, _SocketService.initSockets)();
-	
-	exports.default = app;
-	/* WEBPACK VAR INJECTION */}.call(exports, "server"))
-
-/***/ },
 /* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1030,13 +864,13 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _nodeBittrexApi = __webpack_require__(53);
+	var _nodeBittrexApi = __webpack_require__(55);
 	
 	var _nodeBittrexApi2 = _interopRequireDefault(_nodeBittrexApi);
 	
 	var _ServicesConstants = __webpack_require__(4);
 	
-	var _apiCaller = __webpack_require__(18);
+	var _apiCaller = __webpack_require__(19);
 	
 	var _apiCaller2 = _interopRequireDefault(_apiCaller);
 	
@@ -1182,7 +1016,7 @@
 	
 	var init = function init() {
 	    return new Promise(function (resolve) {
-	        var Poloniex = __webpack_require__(54);
+	        var Poloniex = __webpack_require__(56);
 	
 	        var poloniex = new Poloniex();
 	
@@ -1350,7 +1184,7 @@
 	
 	var _reactRouter = __webpack_require__(6);
 	
-	var _App = __webpack_require__(38);
+	var _App = __webpack_require__(39);
 	
 	var _App2 = _interopRequireDefault(_App);
 	
@@ -1369,8 +1203,8 @@
 	 */
 	if (process.env.NODE_ENV !== 'production') {
 	    // Require async routes only in development for react-hot-reloader to work.
+	    __webpack_require__(18);
 	    __webpack_require__(17);
-	    __webpack_require__(16);
 	}
 	
 	// react-router setup with code-splitting
@@ -1381,14 +1215,14 @@
 	}, void 0, _jsx(_reactRouter.IndexRoute, {
 	    getComponent: function getComponent(nextState, cb) {
 	        Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
-	            cb(null, __webpack_require__(17).default);
+	            cb(null, __webpack_require__(18).default);
 	        }).bind(null, __webpack_require__));
 	    }
 	}), _jsx(_reactRouter.Route, {
 	    path: '/posts/:slug-:cuid',
 	    getComponent: function getComponent(nextState, cb) {
 	        Promise.resolve().catch(function(err) { __webpack_require__.oe(err); }).then((function (require) {
-	            cb(null, __webpack_require__(16).default);
+	            cb(null, __webpack_require__(17).default);
 	        }).bind(null, __webpack_require__));
 	    }
 	}));
@@ -1407,15 +1241,15 @@
 	
 	var _redux = __webpack_require__(22);
 	
-	var _reduxThunk = __webpack_require__(64);
+	var _reduxThunk = __webpack_require__(66);
 	
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 	
-	var _DevTools = __webpack_require__(13);
+	var _DevTools = __webpack_require__(14);
 	
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 	
-	var _reducers = __webpack_require__(44);
+	var _reducers = __webpack_require__(45);
 	
 	var _reducers2 = _interopRequireDefault(_reducers);
 	
@@ -1463,7 +1297,7 @@
 	
 	var _express = __webpack_require__(9);
 	
-	var _orders = __webpack_require__(45);
+	var _orders = __webpack_require__(46);
 	
 	var router = new _express.Router();
 	
@@ -1486,7 +1320,7 @@
 	
 	var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
 	
-	var _socket = __webpack_require__(65);
+	var _socket = __webpack_require__(10);
 	
 	var _socket2 = _interopRequireDefault(_socket);
 	
@@ -1504,29 +1338,10 @@
 	
 	var _config2 = _interopRequireDefault(_config);
 	
-	var _server = __webpack_require__(19);
-	
-	var _server2 = _interopRequireDefault(_server);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var server = _socket2.default.listen(_config2.default.socketPort);
 	
 	// todo: use namespaces and subscriptions properly instead of this hack
 	var sequenceNumberByClient = new Map();
-	
-	// event fired every time a new client connects:
-	server.on('connection', function (socket) {
-	    console.info('Client connected [id=' + socket.id + ']');
-	    // initialize this client's sequence number
-	    sequenceNumberByClient.set(socket, 1);
-	
-	    // when socket disconnects, remove it from the list:
-	    socket.on('disconnect', function () {
-	        sequenceNumberByClient.delete(socket);
-	        console.info('Client gone [id=' + socket.id + ']');
-	    });
-	});
 	
 	var notify = function notify(event, message) {
 	    var _iteratorNormalCompletion = true;
@@ -1556,7 +1371,23 @@
 	    }
 	};
 	
-	var initSockets = exports.initSockets = function initSockets() {
+	var initSockets = exports.initSockets = function initSockets(server) {
+	    var serverIo = (0, _socket2.default)(server);
+	
+	    // server.listen(80);
+	
+	    // event fired every time a new client connects:
+	    serverIo.on('connection', function (socket) {
+	        console.info('Client connected [id=' + socket.id + ']');
+	        // initialize this client's sequence number
+	        sequenceNumberByClient.set(socket, 1);
+	
+	        // when socket disconnects, remove it from the list:
+	        socket.on('disconnect', function () {
+	            sequenceNumberByClient.delete(socket);
+	            console.info('Client gone [id=' + socket.id + ']');
+	        });
+	    });
 	    (0, _PoloniexServices2.default)().then(function (poloniex) {
 	        poloniex.on('message', function (channelName, data, seq) {
 	            if (channelName === _ServicesConstants.PLX_DEFAULT_MARKET && data[0] && data[0].type !== 'orderBook') {
@@ -1592,7 +1423,7 @@
 	});
 	exports.fetchComponentData = fetchComponentData;
 	
-	var _promiseUtils = __webpack_require__(47);
+	var _promiseUtils = __webpack_require__(49);
 	
 	function fetchComponentData(store, components, params) {
 	    var needs = components.reduce(function (prev, current) {
@@ -1614,10 +1445,10 @@
 	"use strict";
 	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';
 	
-	var webpack = __webpack_require__(10);
-	var cssnext = __webpack_require__(55);
-	var postcssFocus = __webpack_require__(56);
-	var postcssReporter = __webpack_require__(57);
+	var webpack = __webpack_require__(11);
+	var cssnext = __webpack_require__(57);
+	var postcssFocus = __webpack_require__(58);
+	var postcssReporter = __webpack_require__(59);
 	
 	module.exports = {
 	  devtool: 'cheap-module-eval-source-map',
@@ -1697,28 +1528,34 @@
 /* 32 */
 /***/ function(module, exports) {
 
-	module.exports = require("path");
+	module.exports = require("http");
 
 /***/ },
 /* 33 */
 /***/ function(module, exports) {
 
-	module.exports = require("react-dom/server");
+	module.exports = require("path");
 
 /***/ },
 /* 34 */
 /***/ function(module, exports) {
 
-	module.exports = require("webpack-dev-middleware");
+	module.exports = require("react-dom/server");
 
 /***/ },
 /* 35 */
 /***/ function(module, exports) {
 
-	module.exports = require("webpack-hot-middleware");
+	module.exports = require("webpack-dev-middleware");
 
 /***/ },
 /* 36 */
+/***/ function(module, exports) {
+
+	module.exports = require("webpack-hot-middleware");
+
+/***/ },
+/* 37 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1735,7 +1572,7 @@
 	};
 
 /***/ },
-/* 37 */
+/* 38 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -1765,7 +1602,7 @@
 	};
 
 /***/ },
-/* 38 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1796,21 +1633,21 @@
 	
 	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
 	
-	var _DevTools = __webpack_require__(13);
+	var _DevTools = __webpack_require__(14);
 	
 	var _DevTools2 = _interopRequireDefault(_DevTools);
 	
-	var _Header = __webpack_require__(41);
+	var _Header = __webpack_require__(42);
 	
 	var _Header2 = _interopRequireDefault(_Header);
 	
-	var _Footer = __webpack_require__(40);
+	var _Footer = __webpack_require__(41);
 	
 	var _Footer2 = _interopRequireDefault(_Footer);
 	
-	var _AppActions = __webpack_require__(12);
+	var _AppActions = __webpack_require__(13);
 	
-	var _IntlActions = __webpack_require__(14);
+	var _IntlActions = __webpack_require__(15);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -1886,7 +1723,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(App);
 
 /***/ },
-/* 39 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1897,7 +1734,7 @@
 	});
 	exports.getShowAddPost = undefined;
 	
-	var _AppActions = __webpack_require__(12);
+	var _AppActions = __webpack_require__(13);
 	
 	// Initial State
 	var initialState = {
@@ -1931,7 +1768,7 @@
 	exports.default = AppReducer;
 
 /***/ },
-/* 40 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -1988,7 +1825,7 @@
 	exports.default = Footer;
 
 /***/ },
-/* 41 */
+/* 42 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2042,7 +1879,7 @@
 	exports.default = Header;
 
 /***/ },
-/* 42 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2054,9 +1891,9 @@
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
-	var _setup = __webpack_require__(11);
+	var _setup = __webpack_require__(12);
 	
-	var _IntlActions = __webpack_require__(14);
+	var _IntlActions = __webpack_require__(15);
 	
 	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
@@ -2089,7 +1926,7 @@
 	exports.default = IntlReducer;
 
 /***/ },
-/* 43 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2101,13 +1938,13 @@
 	
 	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
 	
-	var _recompose = __webpack_require__(60);
+	var _recompose = __webpack_require__(62);
 	
 	var _react = __webpack_require__(0);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _socket = __webpack_require__(66);
+	var _socket = __webpack_require__(67);
 	
 	var _socket2 = _interopRequireDefault(_socket);
 	
@@ -2210,7 +2047,7 @@
 	            activeExchanges = _props.activeExchanges,
 	            currencyPair = _props.currencyPair;
 	
-	        var socket = (0, _socket2.default)(_config2.default.socketUrl);
+	        var socket = (0, _socket2.default)();
 	
 	        activeExchanges.forEach(function (exchangeKey) {
 	            socket.on(currencyPair + '-' + exchangeKey, function (msg) {
@@ -2222,7 +2059,7 @@
 	}))(OrderTables);
 
 /***/ },
-/* 44 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2234,15 +2071,15 @@
 	
 	var _redux = __webpack_require__(22);
 	
-	var _AppReducer = __webpack_require__(39);
+	var _AppReducer = __webpack_require__(40);
 	
 	var _AppReducer2 = _interopRequireDefault(_AppReducer);
 	
-	var _PostReducer = __webpack_require__(15);
+	var _PostReducer = __webpack_require__(16);
 	
 	var _PostReducer2 = _interopRequireDefault(_PostReducer);
 	
-	var _IntlReducer = __webpack_require__(42);
+	var _IntlReducer = __webpack_require__(43);
 	
 	var _IntlReducer2 = _interopRequireDefault(_IntlReducer);
 	
@@ -2261,7 +2098,7 @@
 	// Import Reducers
 
 /***/ },
-/* 45 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2272,7 +2109,7 @@
 	});
 	exports.getCombinedOrderBookRequest = getCombinedOrderBookRequest;
 	
-	var _CombinedExchangeServices = __webpack_require__(46);
+	var _CombinedExchangeServices = __webpack_require__(48);
 	
 	function getCombinedOrderBookRequest(req, res) {
 	    (0, _CombinedExchangeServices.getCombinedOrderBook)().then(function (orders) {
@@ -2283,7 +2120,187 @@
 	}
 
 /***/ },
-/* 46 */
+/* 47 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	/* WEBPACK VAR INJECTION */(function(__dirname) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _jsx = function () { var REACT_ELEMENT_TYPE = typeof Symbol === "function" && Symbol.for && Symbol.for("react.element") || 0xeac7; return function createRawReactElement(type, props, key, children) { var defaultProps = type && type.defaultProps; var childrenLength = arguments.length - 3; if (!props && childrenLength !== 0) { props = {}; } if (props && defaultProps) { for (var propName in defaultProps) { if (props[propName] === void 0) { props[propName] = defaultProps[propName]; } } } else if (!props) { props = defaultProps || {}; } if (childrenLength === 1) { props.children = children; } else if (childrenLength > 1) { var childArray = Array(childrenLength); for (var i = 0; i < childrenLength; i++) { childArray[i] = arguments[i + 3]; } props.children = childArray; } return { $$typeof: REACT_ELEMENT_TYPE, type: type, key: key === undefined ? null : '' + key, ref: null, props: props, _owner: null }; }; }();
+	
+	// Webpack Requirements
+	
+	
+	var _express = __webpack_require__(9);
+	
+	var _express2 = _interopRequireDefault(_express);
+	
+	var _compression = __webpack_require__(31);
+	
+	var _compression2 = _interopRequireDefault(_compression);
+	
+	var _bodyParser = __webpack_require__(30);
+	
+	var _bodyParser2 = _interopRequireDefault(_bodyParser);
+	
+	var _path = __webpack_require__(33);
+	
+	var _path2 = _interopRequireDefault(_path);
+	
+	var _http = __webpack_require__(32);
+	
+	var _http2 = _interopRequireDefault(_http);
+	
+	var _IntlWrapper = __webpack_require__(23);
+	
+	var _IntlWrapper2 = _interopRequireDefault(_IntlWrapper);
+	
+	var _SocketService = __webpack_require__(27);
+	
+	var _socket = __webpack_require__(10);
+	
+	var _socket2 = _interopRequireDefault(_socket);
+	
+	var _webpack = __webpack_require__(11);
+	
+	var _webpack2 = _interopRequireDefault(_webpack);
+	
+	var _webpackConfig = __webpack_require__(29);
+	
+	var _webpackConfig2 = _interopRequireDefault(_webpackConfig);
+	
+	var _webpackDevMiddleware = __webpack_require__(35);
+	
+	var _webpackDevMiddleware2 = _interopRequireDefault(_webpackDevMiddleware);
+	
+	var _webpackHotMiddleware = __webpack_require__(36);
+	
+	var _webpackHotMiddleware2 = _interopRequireDefault(_webpackHotMiddleware);
+	
+	var _store = __webpack_require__(25);
+	
+	var _reactRedux = __webpack_require__(1);
+	
+	var _react = __webpack_require__(0);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _server = __webpack_require__(34);
+	
+	var _reactRouter = __webpack_require__(6);
+	
+	var _reactHelmet = __webpack_require__(5);
+	
+	var _reactHelmet2 = _interopRequireDefault(_reactHelmet);
+	
+	var _routes = __webpack_require__(24);
+	
+	var _routes2 = _interopRequireDefault(_routes);
+	
+	var _fetchData = __webpack_require__(28);
+	
+	var _order = __webpack_require__(26);
+	
+	var _order2 = _interopRequireDefault(_order);
+	
+	var _config = __webpack_require__(3);
+	
+	var _config2 = _interopRequireDefault(_config);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// Initialize the Express App
+	var app = (0, _express2.default)();
+	
+	// Set Development modes checks
+	var isDevMode = process.env.NODE_ENV === 'development' || false;
+	var isProdMode = process.env.NODE_ENV === 'production' || false;
+	
+	// Run Webpack dev server in development mode
+	if (isDevMode) {
+	    var compiler = (0, _webpack2.default)(_webpackConfig2.default);
+	    app.use((0, _webpackDevMiddleware2.default)(compiler, { noInfo: true, publicPath: _webpackConfig2.default.output.publicPath }));
+	    app.use((0, _webpackHotMiddleware2.default)(compiler));
+	}
+	
+	// React And Redux Setup
+	
+	
+	// Import required modules
+	
+	
+	// Apply body Parser and server public assets and routes
+	app.use((0, _compression2.default)());
+	app.use(_bodyParser2.default.json({ limit: '20mb' }));
+	app.use(_bodyParser2.default.urlencoded({ limit: '20mb', extended: false }));
+	app.use(_express2.default.static(_path2.default.resolve(__dirname, '../dist/client')));
+	app.use('/api', _order2.default);
+	
+	// Render Initial HTML
+	var renderFullPage = function renderFullPage(html, initialState) {
+	    var head = _reactHelmet2.default.rewind();
+	
+	    // Import Manifests
+	    var assetsManifest = process.env.webpackAssets && JSON.parse(process.env.webpackAssets);
+	    var chunkManifest = process.env.webpackChunkAssets && JSON.parse(process.env.webpackChunkAssets);
+	
+	    return '\n    <!doctype html>\n    <html>\n      <head>\n        ' + head.base.toString() + '\n        ' + head.title.toString() + '\n        ' + head.meta.toString() + '\n        ' + head.link.toString() + '\n        ' + head.script.toString() + '\n\n        ' + (isProdMode ? '<link rel=\'stylesheet\' href=\'' + assetsManifest['/app.css'] + '\' />' : '') + '\n        <link href=\'https://fonts.googleapis.com/css?family=Lato:400,300,700\' rel=\'stylesheet\' type=\'text/css\'/>\n        <link href=\'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\' rel=\'stylesheet\' type=\'text/css\'/>\n      </head>\n      <body>\n        <div id="root">' + html + '</div>\n        <script>\n          window.__INITIAL_STATE__ = ' + JSON.stringify(initialState) + ';\n          ' + (isProdMode ? '//<![CDATA[\n          window.webpackManifest = ' + JSON.stringify(chunkManifest) + ';\n          //]]>' : '') + '\n        </script>\n        <script src=\'' + (isProdMode ? assetsManifest['/vendor.js'] : '/vendor.js') + '\'></script>\n        <script src=\'' + (isProdMode ? assetsManifest['/app.js'] : '/app.js') + '\'></script>\n      </body>\n    </html>\n  ';
+	};
+	
+	var renderError = function renderError(err) {
+	    var softTab = '&#32;&#32;&#32;&#32;';
+	    var errTrace = isProdMode ? ':<br><br><pre style="color:red">' + softTab + err.stack.replace(/\n/g, '<br>' + softTab) + '</pre>' : '';
+	    return renderFullPage('Server Error' + errTrace, {});
+	};
+	
+	// Server Side Rendering based on routes matched by React-router.
+	app.use(function (req, res, next) {
+	    (0, _reactRouter.match)({ routes: _routes2.default, location: req.url }, function (err, redirectLocation, renderProps) {
+	        if (err) {
+	            return res.status(500).end(renderError(err));
+	        }
+	
+	        if (redirectLocation) {
+	            return res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+	        }
+	
+	        if (!renderProps) {
+	            return next();
+	        }
+	
+	        var store = (0, _store.configureStore)();
+	
+	        return (0, _fetchData.fetchComponentData)(store, renderProps.components, renderProps.params).then(function () {
+	            var initialView = (0, _server.renderToString)(_jsx(_reactRedux.Provider, {
+	                store: store
+	            }, void 0, _jsx(_IntlWrapper2.default, {}, void 0, _react2.default.createElement(_reactRouter.RouterContext, renderProps))));
+	            var finalState = store.getState();
+	
+	            res.set('Content-Type', 'text/html').status(200).end(renderFullPage(initialView, finalState));
+	        }).catch(function (error) {
+	            return next(error);
+	        });
+	    });
+	});
+	
+	// start app
+	var server = app.listen(_config2.default.port, function (error) {
+	    if (!error) {
+	        console.log('MERN is running on port: ' + _config2.default.port + '! Build something amazing!'); // eslint-disable-line
+	    }
+	});
+	
+	(0, _SocketService.initSockets)(server);
+	
+	exports.default = app;
+	/* WEBPACK VAR INJECTION */}.call(exports, "server"))
+
+/***/ },
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -2311,7 +2328,7 @@
 	}
 
 /***/ },
-/* 47 */
+/* 49 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -2342,115 +2359,109 @@
 	}
 
 /***/ },
-/* 48 */
+/* 50 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl");
 
 /***/ },
-/* 49 */
+/* 51 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl-locales-supported");
 
 /***/ },
-/* 50 */
+/* 52 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl/locale-data/jsonp/en");
 
 /***/ },
-/* 51 */
+/* 53 */
 /***/ function(module, exports) {
 
 	module.exports = require("intl/locale-data/jsonp/fr");
 
 /***/ },
-/* 52 */
+/* 54 */
 /***/ function(module, exports) {
 
 	module.exports = require("isomorphic-fetch");
 
 /***/ },
-/* 53 */
+/* 55 */
 /***/ function(module, exports) {
 
 	module.exports = require("node-bittrex-api");
 
 /***/ },
-/* 54 */
+/* 56 */
 /***/ function(module, exports) {
 
 	module.exports = require("poloniex-api-node");
 
 /***/ },
-/* 55 */
+/* 57 */
 /***/ function(module, exports) {
 
 	module.exports = require("postcss-cssnext");
 
 /***/ },
-/* 56 */
+/* 58 */
 /***/ function(module, exports) {
 
 	module.exports = require("postcss-focus");
 
 /***/ },
-/* 57 */
+/* 59 */
 /***/ function(module, exports) {
 
 	module.exports = require("postcss-reporter");
 
 /***/ },
-/* 58 */
+/* 60 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-intl/locale-data/en");
 
 /***/ },
-/* 59 */
+/* 61 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-intl/locale-data/fr");
 
 /***/ },
-/* 60 */
+/* 62 */
 /***/ function(module, exports) {
 
 	module.exports = require("recompose");
 
 /***/ },
-/* 61 */
+/* 63 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools");
 
 /***/ },
-/* 62 */
+/* 64 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools-dock-monitor");
 
 /***/ },
-/* 63 */
+/* 65 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-devtools-log-monitor");
 
 /***/ },
-/* 64 */
+/* 66 */
 /***/ function(module, exports) {
 
 	module.exports = require("redux-thunk");
 
 /***/ },
-/* 65 */
-/***/ function(module, exports) {
-
-	module.exports = require("socket.io");
-
-/***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports) {
 
 	module.exports = require("socket.io-client");

@@ -1,9 +1,11 @@
-import Express from 'express';
+import express from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import path from 'path';
+import http from 'http';
 import IntlWrapper from '../client/modules/Intl/IntlWrapper';
 import {initSockets} from './services/SocketService';
+import socketIO from 'socket.io';
 
 
 // Webpack Requirements
@@ -13,7 +15,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
 // Initialize the Express App
-const app = new Express();
+const app = express();
 
 // Set Development modes checks
 const isDevMode = process.env.NODE_ENV === 'development' || false;
@@ -45,7 +47,7 @@ import serverConfig from './config';
 app.use(compression());
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
-app.use(Express.static(path.resolve(__dirname, '../dist/client')));
+app.use(express.static(path.resolve(__dirname, '../dist/client')));
 app.use('/api', orders);
 
 // Render Initial HTML
@@ -132,13 +134,14 @@ app.use((req, res, next) => {
 
 
 // start app
-app.listen(serverConfig.port, (error) => {
+const server = app.listen(serverConfig.port, (error) => {
     if (!error) {
-    console.log(`MERN is running on port: ${serverConfig.port}! Build something amazing!`); // eslint-disable-line
+        console.log(`MERN is running on port: ${serverConfig.port}! Build something amazing!`); // eslint-disable-line
     }
 });
 
-initSockets();
+initSockets(server);
+
 
 export default app;
 

@@ -2,7 +2,6 @@ import {compose, lifecycle, withState, withProps} from 'recompose';
 import React, { PropTypes } from 'react';
 import io from 'socket.io-client';
 import {mergeNewOrders, buildOrdersMap, mergeExchanges} from '../../../../server/util/OrderUtils';
-import Config from '../../../../server/config';
 
 const OrderTable = ({ordersBody, title, className, sum}) => {
     return (
@@ -78,7 +77,7 @@ export default compose(
     lifecycle({
         componentDidMount() {
             const {updateOrders, activeExchanges, currencyPair} = this.props;
-            const socket = io(Config.socketUrl);
+            const socket = io();
 
             activeExchanges.forEach(exchangeKey => {
                 socket.on(`${currencyPair}-${exchangeKey}`, (msg) => {
