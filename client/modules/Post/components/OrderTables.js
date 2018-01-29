@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import io from 'socket.io-client';
 import {mergeNewOrders, buildOrdersMap, mergeExchanges} from '../../../../server/util/OrderUtils';
 
-const OrderTable = ({ordersBody, title, className, sum}) => {
+const OrderTable = ({ordersBody, title, className, sum,}) => {
     return (
         <div className={className}>
             <h2 style={{float: 'left'}}>{title}</h2>
@@ -11,10 +11,10 @@ const OrderTable = ({ordersBody, title, className, sum}) => {
             <table className="table table-sm table-striped table-bordered font-size-h6">
                 <thead>
                 <tr>
-                    <th scope="col">sum (ETH)</th>
-                    <th scope="col">rate</th>
-                    <th scope="col">quantity (ETH)</th>
-                    <th scope="col">exchange</th>
+                    <th scope="col">Sum (ETH)</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity (ETH)</th>
+                    <th scope="col">Exchange</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -25,11 +25,14 @@ const OrderTable = ({ordersBody, title, className, sum}) => {
     );
 };
 
-function OrderTables({asksBody, bidsBody, asksSum, bidsSum}) {
+function OrderTables({asksBody, bidsBody, asksSum, bidsSum, canArbitrage}) {
     return (
-        <div className="row">
-            <OrderTable className="col-6" ordersBody={asksBody} sum={asksSum} title="Asks"/>
-            <OrderTable className="col-6" ordersBody={bidsBody} sum={bidsSum} title="Bids"/>
+        <div>
+            <div style={{height: '15px', color: 'green'}}>{canArbitrage ? 'Arbitrage opportunity between exchanges' : ''}</div>
+            <div className="row">
+                <OrderTable className="col-6" ordersBody={asksBody} sum={asksSum} title="Asks"/>
+                <OrderTable className="col-6" ordersBody={bidsBody} sum={bidsSum} title="Bids"/>
+            </div>
         </div>
     );
 }
@@ -72,6 +75,7 @@ export default compose(
             asksSum: asks[asks.length - 1].sum.toString().slice(0, 8),
             bidsBody: bids.slice(0, 50).map(buildRow),
             bidsSum: bids[bids.length - 1].sum.toString().slice(0, 8),
+            canArbitrage: asks[0].rate < bids[0].rate,
         };
     }),
     lifecycle({

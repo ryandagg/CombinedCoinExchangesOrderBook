@@ -28,11 +28,11 @@ PostListPage.need = [getCombinedOrderBookRequest];
 // Retrieve data from store as props
 function mapStateToProps(state) {
     return {
-        orders: state.posts.orders,
+        orders: state.orders.orders,
     };
 }
 
-// PostListPage.propTypes = {
+// OrderBookPage.propTypes = {
 //     orders: PropTypes.arrayOf(PropTypes.shape({
 //         name: PropTypes.string.isRequired,
 //         title: PropTypes.string.isRequired,
