@@ -41,7 +41,7 @@ const init = () => new Promise(resolve => {
 
 let poloniexInstance;
 
-const getPoloniex = () => {
+const getPoloniexSingleton = () => {
     if (poloniexInstance) {
         return Promise.resolve(poloniexInstance);
     } else {
@@ -52,10 +52,10 @@ const getPoloniex = () => {
     }
 };
 
-export default getPoloniex;
+export default getPoloniexSingleton;
 
 export const getPoloniexOrderBook = () => {
-    return getPoloniex().then((poloniex) => {
+    return getPoloniexSingleton().then((poloniex) => {
         return poloniex.returnOrderBook(PLX_DEFAULT_MARKET, 100).then(orders => {
             const asks = orders.asks.map(([rate, quantity]) => buildOrder({
                 rate,

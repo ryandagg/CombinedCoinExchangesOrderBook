@@ -1,5 +1,11 @@
-export const buildOrdersMapReducer = (result, {rate, exchangeKey, quantity, sum}) => {
-    result.set(rate, { exchangeKey, quantity, sum});
+export const buildOrdersMapReducer = (result, {rate, exchangeKey, quantity}) => {
+    const existingRate = result.get(rate);
+
+    // have to check this because of rate rounding that occurs in buildOrder()
+    if (existingRate != null) quantity = existingRate.quantity + quantity;
+
+    result.set(rate, { exchangeKey, quantity });
+
     return result;
 };
 
@@ -34,8 +40,10 @@ export const mergeExchanges = ([firstDataMap, secondDataMap]) => {
         while (!secondNext.done && fRate >= secondNext.value) {
             const sRate = secondNext.value;
             const sOrder = secondDataMap.get(sRate);
-            if (fRate === sOrder.rate) {
+            if (fRate === sRate) {
                 didMerge = true;
+                // merged exchangeKey creation could be more performant now,
+                // but keeping it this way for goal of using more than 2 exchanges.
                 let exchanges = [fOrder.exchangeKey, sOrder.exchangeKey];
                 exchanges.sort();
                 const mergedOrder = buildOrder({
@@ -44,7 +52,6 @@ export const mergeExchanges = ([firstDataMap, secondDataMap]) => {
                     exchangeKey: exchanges.join('/'),
                 });
                 mergedOrder.sum = sum += mergedOrder.quantity;
-
                 orders.push(mergedOrder);
             } else {
                 orders.push(buildOrderWithSum({...sOrder, rate: sRate}, sum += sOrder.quantity));
@@ -87,7 +94,7 @@ export const mergeNewOrders = ({newOrders, orders, exchangeKey}) => {
             } else {
                 const insertionArr = insertions[lookUpKey];
                 insertionArr.push(buildOrder({
-                    quantity: quantity,
+                    quantity,
                     rate,
                     exchangeKey,
                 }));
@@ -141,7 +148,7 @@ export const buildOrder = ({rate, quantity, exchangeKey}) => {
     if (quantity == null) {
         throw new Error(`buildOrder missing data: ${{quantity}}`);
     }
-    if (exchangeKey == null) {
+    if (!exchangeKey) {
         throw new Error(`buildOrder missing data: ${{exchangeKey}}`);
     }
 

@@ -3,7 +3,20 @@ import React, { PropTypes } from 'react';
 import io from 'socket.io-client';
 import {mergeNewOrders, buildOrdersMap, mergeExchanges} from '../../../../server/util/OrderUtils';
 
-const OrderTable = ({ordersBody, title, className, sum,}) => {
+const TABLE_MAX_ROWS = 90;
+
+const OrderRow = ({rate, exchangeKey, quantity, sum}) => {
+    return (
+        <tr key={`${rate}-${quantity}`}>
+            <td>{sum.toString().slice(0, 8)}</td>
+            <td>{rate.toString().slice(0, 8)}</td>
+            <td>{quantity.toString().slice(0, 8)}</td>
+            <td>{exchangeKey}</td>
+        </tr>
+    );
+};
+
+const OrderTable = ({ordersBody, title, className, sum}) => {
     return (
         <div className={className}>
             <h2 style={{float: 'left'}}>{title}</h2>
@@ -18,7 +31,7 @@ const OrderTable = ({ordersBody, title, className, sum,}) => {
                 </tr>
                 </thead>
                 <tbody>
-                    {ordersBody}
+                    {ordersBody.map(OrderRow)}
                 </tbody>
             </table>
         </div>
@@ -37,28 +50,22 @@ function OrderTables({asksBody, bidsBody, asksSum, bidsSum, canArbitrage}) {
     );
 }
 
+const orderPropShape = PropTypes.shape({
+    sum: PropTypes.number.isRequired,
+    exchangeKey: PropTypes.string.isRequired,
+    rate: PropTypes.number.isRequired,
+    quantity: PropTypes.number.isRequired,
+});
+
 OrderTables.propTypes = {
-    // orders: PropTypes.arrayOf(PropTypes.shape({
-    //     name: PropTypes.string.isRequired,
-    //     title: PropTypes.string.isRequired,
-    //     content: PropTypes.string.isRequired,
-    //     slug: PropTypes.string.isRequired,
-    //     cuid: PropTypes.string.isRequired,
-    // })).isRequired,
-    // handleDeletePost: PropTypes.func.isRequired,
-};
+    asksBody: PropTypes.arrayOf(orderPropShape).isRequired,
+    bidsBody: PropTypes.arrayOf(orderPropShape).isRequired,
+    bidsSum: PropTypes.string.isRequired,
+    asksSum: PropTypes.string.isRequired,
+    updateOrders: PropTypes.func.isRequired,
+    canArbitrage: PropTypes.bool.isRequired,
 
-const buildRow = ({rate, exchangeKey, quantity, sum}) => {
-    return (
-        <tr key={`${rate}-${quantity}`}>
-            <td>{sum.toString().slice(0, 8)}</td>
-            <td>{rate.toString().slice(0, 8)}</td>
-            <td>{quantity.toString().slice(0, 10)}</td>
-            <td>{exchangeKey}</td>
-        </tr>
-    );
 };
-
 
 export default compose(
     // avoiding redux round trip for expected speed gains. Also, showing off what I know about recompose.
@@ -71,9 +78,9 @@ export default compose(
             updateOrders: (newOrders, exchangeKey) => {
                 setOrders(mergeNewOrders({newOrders, orders, exchangeKey}));
             },
-            asksBody: asks.slice(0, 50).map(buildRow),
+            asksBody: asks.slice(0, TABLE_MAX_ROWS),
             asksSum: asks[asks.length - 1].sum.toString().slice(0, 8),
-            bidsBody: bids.slice(0, 50).map(buildRow),
+            bidsBody: bids.slice(0, TABLE_MAX_ROWS),
             bidsSum: bids[bids.length - 1].sum.toString().slice(0, 8),
             canArbitrage: asks[0].rate < bids[0].rate,
         };

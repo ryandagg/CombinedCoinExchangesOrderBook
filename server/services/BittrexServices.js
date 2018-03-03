@@ -7,7 +7,7 @@ const init = () => new Promise((resolve) => {
     bittrex.options({
         websockets: {
             onConnect: () => {
-                console.log('Websocket connected');
+                // console.log('Websocket connected');
                 resolve(bittrex);
             },
             onDisconnect: () => {
@@ -19,10 +19,9 @@ const init = () => new Promise((resolve) => {
     bittrex.websockets.client();
 });
 
-
 let bittrexInstance;
 
-const getBittrex = () => {
+const getBittrexSingleton = () => {
     if (bittrexInstance) {
         return Promise.resolve(bittrexInstance);
     } else {
@@ -33,12 +32,11 @@ const getBittrex = () => {
     }
 };
 
-export default getBittrex;
 
 const GET_ORDER_BOOK_URL = `https://bittrex.com/api/v1.1/public/getorderbook?market=${BTX_DEFAULT_MARKET}&type=both`;
 
 export const getBittrexOrderBook = () => {
-    return getBittrex().then(() => callApi({fullUrl: GET_ORDER_BOOK_URL})
+    return getBittrexSingleton().then(() => callApi({fullUrl: GET_ORDER_BOOK_URL})
         .then(({result: {buy, sell}}) => {
             const asks = sell.map(({Quantity, Rate}) => buildOrder({
                 quantity: Quantity,
@@ -96,3 +94,4 @@ export const transformBtxUpdate = (data) => {
     return newOrders;
 };
 
+export default getBittrexSingleton;
