@@ -2,13 +2,7 @@ import express from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 import path from 'path';
-import http from 'http';
-import IntlWrapper from '../client/modules/Intl/IntlWrapper';
 import {initSockets} from './services/SocketService';
-import socketIO from 'socket.io';
-
-
-// Webpack Requirements
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
 import webpackDevMiddleware from 'webpack-dev-middleware';
@@ -116,9 +110,7 @@ app.use((req, res, next) => {
             .then(() => {
                 const initialView = renderToString(
                     <Provider store={store}>
-                        <IntlWrapper>
-                            <RouterContext {...renderProps} />
-                        </IntlWrapper>
+                        <RouterContext {...renderProps} />
                     </Provider>
                 );
                 const finalState = store.getState();

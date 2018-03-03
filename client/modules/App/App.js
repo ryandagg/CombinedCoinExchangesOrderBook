@@ -1,12 +1,10 @@
 /* globals window process */
 import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
 import styles from './App.css';
 import Helmet from 'react-helmet';
 import DevTools from './components/DevTools';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import { switchLanguage } from '../../modules/Intl/IntlActions';
 
 export class App extends Component {
     constructor(props) {
@@ -38,10 +36,7 @@ export class App extends Component {
                             },
                         ]}
                     />
-                    <Header
-                        switchLanguage={lang => this.props.dispatch(switchLanguage(lang))}
-                        intl={this.props.intl}
-                    />
+                    <Header/>
                     <div className={styles.container}>
                         {this.props.children}
                     </div>
@@ -55,14 +50,7 @@ export class App extends Component {
 App.propTypes = {
     children: PropTypes.object.isRequired,
     dispatch: PropTypes.func.isRequired,
-    intl: PropTypes.object.isRequired,
 };
 
-// Retrieve data from store as props
-function mapStateToProps(store) {
-    return {
-        intl: store.intl,
-    };
-}
 
-export default connect(mapStateToProps)(App);
+export default App;
